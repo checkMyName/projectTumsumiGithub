@@ -1,0 +1,19 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.doctors {
+  background-color: get($colors, light);
+  padding-top: rem(50px);
+  padding-bottom: rem(150px);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(35px);
+
+    &__filter {
+      margin-top: rem(16px);
+      margin-bottom: rem(24px);
+    }
+  }
+}

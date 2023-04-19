@@ -1,0 +1,103 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Страница информации';
+  - pageRootClass = 'info';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Информация',
+      href: 'information.html',
+    },
+    {
+      name: 'О медицинской деятельности клиник',
+    },
+  ])
+  .info.bg-light
+    .container
+      .info__content
+        +title({
+          tag: 'h3',
+          type: 'small',
+          content: 'О медицинской деятельности клиник',
+          classes: 'mb-0 info__title',
+        })
+        hr.info__content-divider
+        .info__content-disclaimer.d-block.d-lg-none
+          p.text-500 Наша клиника не оказывает услуги в рамках Территориальной программы госгарантий бесплатного оказания медицинской помощи предусмотренной частью «д» п.11 раздела III постановления Правительства РФ от 04.10.2012 года № 1006.
+        .info__content-part
+          h4.text-medium.info__content-title Документы регулирующие медицинскую деятельность:
+          ul.mb-0
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline.text-dark Федеральный закон от 21 ноября 2011 г. N 323-ФЗ «Об основах охраны здоровья граждан в Российской Федерации»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline.text-dark Постановление Правительства РФ от 4 октября 2012 г. N 1006 «Об утверждении Правил предоставления медицинскими организациями платных медицинских услуг»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline.text-dark Постановление Правительства Российской Федерации от 28.12.2021 № 2505 «О Программе государственных гарантий бесплатного оказания гражданам медицинской помощи на 2022 год и на плановый период 2023 и 2024 годов»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline.text-dark Постановление Правительства Тюменской области от 29.12.2021 № 921-п «О Территориальной программе государственных гарантий бесплатного оказания гражданам медицинской помощи в Тюменской области на 2022 год и на плановый период 2023 и 2024 годов»
+        .info__content-part.text-dark
+          h4.text-medium.info__content-title О порядке, объёме и условиях оказания помощи в рамках государственных гарантий бесплатного оказания помощи
+          p Выдача копий справок и медицинских заключений осуществляется согласно #[a(link="#" class="text-danger text-decoration-underline") Приказу Министерства здравоохранения Российской Федерации от 14.09.2020 № 972н «Об утверждении Порядка выдачи медицинскими организациями справок и медицинских заключений»] (далее - Порядок).
+          br
+          p В соответствии с пунктом 3 Порядка, справки и медицинские заключения выдаются пациентам на бумажном носителе при их личном обращении за получением указанных документов в медицинскую организацию при предъявлении документа, удостоверяющего личность.
+          br
+          p В соответствии с пунктом 4 Порядка, в отношении лиц, указанных в части 2 статьи 20 Федерального закона от 21 ноября 2011 г. № 323-ФЗ "Об основах охраны здоровья граждан в Российской Федерации", справки и медицинские заключения на бумажном носителе выдаются их законным представителям при предъявлении документа, удостоверяющего личность законного представителя, а также документа, подтверждающего полномочия законного представителя.
+          br
+          ul.info__content-list.d-none.d-lg-block
+            li
+              p В соответствии с пунктом 4 Порядка, в отношении лиц, указанных в части 2 статьи 20 Федерального закона от 21 ноября 2011 г. № 323-ФЗ "Об основах охраны здоровья граждан в Российской Федерации"
+            li
+              p Справки и медицинские заключения на бумажном носителе выдаются их законным представителям при предъявлении документа, удостоверяющего личность законного представителя. 
+            li
+              p А также документа, подтверждающего полномочия законного представителя.
+        .info__content-part
+          h4.text-medium.info__content-title.info__content-title--license Лицензии
+          .d-block.d-lg-none
+            a(href="#" class="info__content-license")
+              +icon('file', 'info__content-license-icon')
+              span.info__content-license-name Licensia_na_okasania_medicinsk...
+            a(href="#" class="info__content-license")
+              +icon('file', 'info__content-license-icon')
+              span.info__content-license-name Licensia_na_okasania_medicinskih...
+            a(href="#" class="info__content-license")
+              +icon('file', 'info__content-license-icon')
+              span.info__content-license-name Licensia_na_okasania_medicinskih...
+            a(href="#" class="info__content-license")
+              +icon('file', 'info__content-license-icon')
+              span.info__content-license-name Licensia_na_okasania_medicinski...
+            a(href="#" class="info__content-license")
+              +icon('file', 'info__content-license-icon')
+              span.info__content-license-name Licensia_na_okasania.pdf
+          ul.mb-0.d-none.d-lg-block
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline Федеральный закон от 21 ноября 2011 г. N 323-ФЗ «Об основах охраны здоровья граждан в Российской Федерации»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline Постановление Правительства РФ от 4 октября 2012 г. N 1006 «Об утверждении Правил предоставления медицинскими организациями платных медицинских услуг»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline Постановление Правительства Российской Федерации от 28.12.2021 № 2505 «О Программе государственных гарантий бесплатного оказания гражданам медицинской помощи на 2022 год и на плановый период 2023 и 2024 годов»
+            li.info__content-item
+              .info__content-item-icon
+                +icon('arrow-right', 'icon icon-red')
+              span.text-normal.text-decoration-underline Постановление Правительства Тюменской области от 29.12.2021 № 921-п «О Территориальной программе государственных гарантий бесплатного оказания гражданам медицинской помощи в Тюменской области на 2022 год и на плановый период 2023 и 2024 годов»

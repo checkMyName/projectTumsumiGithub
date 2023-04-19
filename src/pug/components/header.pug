@@ -1,0 +1,156 @@
+header(class=['header', 'js-header'])
+
+	-
+		const labelItems = [
+			{
+				name: 'Клиника',
+				link: '#',
+			},
+			{
+				name: 'Стамотология',
+				link: '#',
+			},
+		]
+
+	-
+		const menuItems = [
+			{
+				name: 'Цены',
+				link: 'prices.html',
+				classes: 'order-1 order-lg-1',
+			},
+			{
+				name: 'Врачи',
+				link: 'doctors.html',
+				classes: 'order-2 order-lg-1',
+			},
+			{
+				name: 'Информация',
+				link: 'information.html',
+				classes: 'order-3 order-lg-1',
+			},
+			{
+				name: 'Вопросы/Ответы',
+				link: 'Q&A.html',
+				classes: 'order-4 order-lg-1',
+			},
+			{
+				name: 'Отзывы',
+				link: 'reviews.html',
+				classes: 'order-lg-1',
+			},
+			{
+				name: 'Вакансии',
+				link: 'vacancies.html',
+				classes: 'order-1 order-lg-1',
+			},
+			{
+				name: 'Контакты',
+				link: 'contacts.html',
+				classes: 'order-2 order-lg-1',
+			},
+			{
+				name: 'Налоговый вычет',
+				link: '#',
+				classes: 'order-3 order-lg-1',
+			},
+			{
+				name: 'Полезные советы',
+				link: 'articles.html',
+				classes: 'order-4 order-lg-1',
+			},
+		]
+
+	-
+		nav = [
+			{
+				name: 'Home',
+				href: 'home.html'
+			},
+			{
+				name: 'Ui kit',
+				href: 'ui.html'
+			},
+			{
+				name: 'Pages',
+				href: 'index.html'
+			}
+		]
+
+	.container
+		.row.gx-4.gx-md-5.gx-lg-3.gx-xl-5.justify-content-between.align-items-center.align-items-lg-start
+			.col-auto
+				a(href="index.html").header__logo
+					+icon('logo')
+			.col-auto.col-lg-3.col-xxl-auto.ms-auto.ms-lg-0
+				form.d-none.d-lg-flex.align-items-center.search.header__search.js-search
+					button(type="button" class="d-flex me-1")
+						+icon('magnifier', 'icon', '16px', '16px')
+					input(type='search' name='search' placeholder='Поиск услуги или врача' value='' class="text-secondary").js-search-input.js-search-input-highlight.js-search-input-outline
+					.search__dropdown.js-search-dropdown
+						.search__dropdown-content
+							.search__dropdown-part
+								p.text-uppercase.text-secondary.search__dropdown-part-label Услуга
+								p.text-normal.text-500.search__dropdown-part-name Гастроэнтеролог
+							.search__dropdown-part
+								p.text-uppercase.text-secondary.search__dropdown-part-label Врачи
+								.search__dropdown-part-name
+									p.text-normal.text-500 Гастроэнтеролог
+									p.mb-0.text-small Врач-акушер
+								.search__dropdown-part-name
+									p.text-normal.text-500 Гастроэнтеролог
+									p.mb-0.text-small Врач-акушер
+				a(href="search.html").d-inline-block.d-lg-none
+					+icon('magnifier', 'header-icon')
+			.col-2.col-xl-auto.d-none.d-lg-block
+				.header__contacts
+					a(href="tel:+73452689201" class="d-block header__contacts-phone")
+						+icon('phone', 'header-icon')
+						span.ms-1 +7 (3452) 68-92-01
+					p.mb-0.text-uppercase.text-secondary.text-ex-small.header__contacts-name Стоматологическая #[br] клиника 
+			.col-2.col-xl-auto.d-none.d-lg-block
+				.header__contacts
+					a(href="tel:+73452200510" class="d-block header__contacts-phone")
+						+icon('phone', 'header-icon')
+						span.ms-1 +7 (3452) 20-05-10
+					p.mb-0.text-uppercase.text-secondary.text-ex-small.header__contacts-name Университетская многопрофильная клиника
+			.col-auto.d-block.d-lg-none
+				.header__contacts.header__contacts--mobile
+					.header__contacts-phone
+						+icon('phone', 'header-icon')
+					.header__contacts-block
+						.header__contacts-wrapper
+							ul.mb-0
+								li.mb-3
+									a(href="tel:+73452689201" class="mb-1 d-block header__contacts-phone")
+										span +7 (3452) 68-92-01
+									p.mb-0.text-uppercase.text-secondary.text-ex-small.header__contacts-name Стоматологическая #[br] клиника
+								li.mt-1
+									a(href="tel:+73452200510" class="mb-1 d-block header__contacts-phone")
+										span +7 (3452) 20-05-10
+									p.mb-0.text-uppercase.text-secondary.text-ex-small.header__contacts-name Университетская многопрофильная клиника
+			.col-auto
+				button(type="button" class="text-dark button button-outline").d-none.d-lg-flex.align-items-center
+					+icon('user', 'header-icon')
+					span.ml-8 Войти в ЛК
+				a(href="#").d-block.d-lg-none
+					+icon('user', 'header-icon')
+
+			.col-auto.d-none
+				button(type='button' data-bs-toggle='offcanvas' data-bs-target="#js-offcanvas-menu")
+					+icon('menu', '', '30px', '30px')
+	.header__bottom
+		.container
+			.row.justify-content-between.align-items-center
+				.col-9.d-none.d-lg-block
+					.header__nav.js-header-nav
+						include nav
+				.col-auto.d-block.d-lg-none
+					button(type="button" data-bs-toggle='offcanvas' data-bs-target="#js-offcanvas-menu").header__menu.text-dark.d-flex.align-items-center
+						+icon('menu-dots', '', '20px', '20px')
+						span.ms-3 Меню
+				.col-auto
+					a(href="#" class="d-flex align-items-center button button-red button-red--small")
+						//- +icon('dot', '', '18px', '18px')
+						span.button-dot
+						span Онлайн запись

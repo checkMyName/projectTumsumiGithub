@@ -1,0 +1,82 @@
+@import "../utilities/variables";
+
+.addresses {
+  // padding: rem(20px);
+  background-color: get($colors, light);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(16px);
+  }
+
+  &__content {
+
+    &-block {
+      margin: rem(48px) 0;
+
+      @include media-breakpoint-down(lg) {
+        margin: rem(24px) 0;
+      }
+    }
+
+    &-info {
+      margin-top: rem(32px);
+
+      @include media-breakpoint-down(lg) {
+        margin-top: rem(24px);
+      }
+    }
+
+    &-address {
+      @include media-breakpoint-down(lg) {
+        font-size: rem(16px);
+      }
+    }
+
+    &-button {
+      // display: flex;
+      @include font-size(14px);
+
+      @include media-breakpoint-up(lg) {
+        
+        max-width: rem(160px);
+      }
+
+      @include media-breakpoint-down(lg) {
+        justify-content: center;
+      }
+
+      @include media-breakpoint-down(md) {
+        // @include font-size(14px);
+
+        width: 100%;
+        // text-align: center;
+        
+        padding: rem(10px) 0;
+      }
+    }
+  }
+
+  &__map {
+    
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      height: rem(680px);
+      margin: rem(20px) 0;
+    }
+    
+    @include media-breakpoint-between(md, lg) {
+      height: rem(560px);
+      margin: rem(20px) 0;
+    }
+    
+    @include media-breakpoint-down(md) {
+      height: rem(160px);
+      margin-top: rem(24px);
+      margin-bottom: 0;
+    }
+  }
+}

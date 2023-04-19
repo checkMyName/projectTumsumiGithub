@@ -1,0 +1,554 @@
+@import "../utilities/variables";
+
+.logo {
+  display: block;
+
+  .svg-icon {
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      width: rem(208px);
+      height: rem(45px);
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      width: rem(160px);
+      height: rem(40px);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(120px);
+      height: rem(30px);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(86px);
+      height: rem(20px);
+    }
+  }
+}
+
+.border-radius-8 {
+  border-radius: 8px;
+}
+
+.border-radius-20 {
+  border-radius: 20px;
+}
+
+.nav {
+  &__content {
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 90%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 0 rem(12px);
+    }
+  }
+
+  &__dropdown {
+    $arrow-size: rem(23px);
+
+    position: relative;
+    min-width: rem(66px);
+    z-index: 10;
+    cursor: pointer;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: rem(16px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: flex;
+    }
+
+    @include media-breakpoint-down(md) {
+      @include font-size(14px);
+    }
+
+    &-button {
+      .svg-icon {
+        @include transition;
+      }
+
+      &.is-active {
+        .svg-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-block {
+      @include transition;
+
+      position: absolute;
+      top: 110%;
+      left: 0;
+      opacity: 0;
+      min-width: rem(170px);
+      padding: rem(10px);
+      user-select: none;
+      pointer-events: none;
+      background-color: get($colors, white);
+      border-radius: 10px;
+      box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+
+      @include media-breakpoint-up(lg) {
+        top: calc(100% + #{$arrow-size});
+      }
+
+      @include media-breakpoint-down(lg) {
+        top: 110%;
+      }
+
+      &.is-active {
+        opacity: 1;
+        user-select: auto;
+        pointer-events: all;
+      }
+
+      &::before {
+        @include pseudo;
+
+        top: -$arrow-size / 2.2;
+        left: $arrow-size / 2;
+        width: $arrow-size;
+        height: $arrow-size;
+        background-color: get($colors, white);
+        transform: rotate(45deg);
+        border-radius: 8px;
+        clip-path: polygon(5% 5%, 5% 90%, 90% 5%);
+        box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+      }
+    }
+
+    .nav__dropdown-wrapper-link + .nav__dropdown-wrapper-link {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    white-space: nowrap;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 rem(16px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin: rem(8px) 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      @include font-size(14px);
+    }
+  }
+
+  &__tripledot {
+    $content-width: rem(205px);
+
+    position: relative;
+    padding-left: rem(16px);
+    z-index: 5;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    &-content {
+      @include transition;
+
+      position: absolute;
+      top: calc(100% + 10px);
+      right: -100%;
+      display: flex;
+      flex-direction: column;
+      background-color: get($colors, white);
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
+      width: $content-width;
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
+
+      .nav__link {
+        padding: rem(8px) rem(12px);
+      }
+
+      &.is-active {
+        opacity: 1;
+        user-select: auto;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.scrollup {
+  @include transition;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  // bottom: rem(110px);
+  bottom: rem(20px);
+  right: rem(32px);
+  background-color: get($colors, danger);
+  border-radius: 50%;
+  width: rem(40px);
+  height: rem(40px);
+
+  &:hover {
+    background-color: get($colors, darkred);
+  }
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+
+  .svg-icon {
+    width: rem(24px);
+    height: rem(24px);
+  }
+}
+
+.icon {
+  @include transition;
+
+  fill: none;
+  stroke: get($colors, black);
+  stroke-width: 1.5px;
+
+  &-red {
+    fill: get($colors, danger);
+    stroke: get($colors, danger);
+  }
+
+  &-white {
+    fill: get($colors, white);
+    stroke: get($colors, white);
+  }
+}
+
+.search {
+  @include transition;
+
+  position: relative;
+  padding: rem(12px) rem(14px);
+  border-radius: 8px;
+  // border: 1px solid get($colors, light);
+  border: 1px solid get($colors, white);
+
+  &.is-focused {
+    border: 1px solid get($colors, black);
+  }
+
+  &.is-filled {
+    .svg-icon {
+      stroke: get($colors, black);
+    }
+
+    input {
+      color: get($colors, black);
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    min-width: rem(350px);
+    padding: rem(12px) rem(14px);
+  }
+
+  @include media-breakpoint-down(xxl) {
+    padding: rem(12px) rem(10px);
+  }
+
+  .svg-icon {
+    stroke: get($colors, secondary);
+  }
+
+  &.is-focused {
+    .search__close {
+      display: flex;
+    }
+  }
+
+  input {
+    @include font-size(14px);
+
+    flex-grow: 1;
+    border: none;
+    outline: none;
+  }
+
+  &__close {
+    display: none;
+    padding: rem(5px);
+    background-color: get($colors, light);
+    border-radius: 50%;
+  }
+
+  &__dropdown {
+    @include transition;
+
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    padding: rem(16px) rem(8px);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: get($colors, white);
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
+
+    &.is-active {
+      opacity: 1;
+      user-select: auto;
+      pointer-events: all;
+    }
+
+    &-part {
+      & + .search__dropdown-part {
+        margin-top: rem(16px);
+      }
+
+      &-label,
+      &-name {
+        // padding: rem(8px) rem(12px);
+        margin-bottom: 0;
+      }
+
+      &-label {
+        @include font-size(10px);
+
+        padding: 0 rem(12px);
+      }
+
+      &-name {
+        @include transition;
+        padding: rem(8px) rem(12px);
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: get($colors, light);
+          border-radius: 8px;
+        }
+
+        & + .search__dropdown-part-name {
+          margin-top: rem(8px);
+        }
+      }
+    }
+  }
+}
+
+.label {
+  margin-bottom: rem(24px);
+}
+
+.border-horizontal {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  border-bottom: 1px solid get($colors, gainsboro);
+  padding: rem(24px) 0;
+
+  @include media-breakpoint-down(md) {
+    padding: rem(12px) 0;
+  }
+
+  &:first-child {
+    border-top: 1px solid get($colors, gainsboro);
+  }
+
+  span {
+    &:first-child {
+      width: 80%;
+    }
+
+    @include media-breakpoint-down(md) {
+      @include font-size(14px);
+    }
+  }
+}
+
+.slider {
+  &__button {
+    &-list {
+    }
+
+    &-prev,
+    &-next {
+      &.is-disabled {
+        user-select: none;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+
+    &-next {
+      margin-left: rem(8px);
+      .svg-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__pagination {
+    &-bullet {
+      $dot-size: rem(12px);
+
+      @include transition;
+
+      display: block;
+      position: relative;
+      width: $dot-size;
+      height: $dot-size;
+      border-radius: 50%;
+      opacity: 0.5;
+      background-color: get($colors, white);
+
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &::after {
+        @include transition;
+        @include pseudo;
+
+        top: $dot-size / 4;
+        left: $dot-size / 4;
+        width: $dot-size / 2;
+        height: $dot-size / 2;
+        border-radius: 50%;
+        opacity: 0;
+        background-color: get($colors, white);
+      }
+
+      &.is-active {
+        background-color: get($colors, danger);
+        opacity: 1;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.filter {
+  @include transition;
+
+  position: relative;
+  color: get($colors, dark);
+
+  &:hover {
+    color: get($colors, black);
+
+    input:checked + span {
+      background-color: get($colors, darkred);
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    cursor: pointer;
+
+    &:checked + span {
+      color: get($colors, white);
+      background-color: get($colors, danger);
+    }
+
+    // &:checked + span:hover {
+    //   background-color: black;
+    // }
+  }
+
+  span {
+    @include transition;
+    display: inline-block;
+    padding: rem(10px) rem(12px);
+    background-color: get($colors, white);
+    border-radius: 20px;
+    font-weight: 500;
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(6px) rem(8px);
+    }
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.mt {
+  &-big {
+    margin-top: rem(50px);
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &-medium {
+    margin-top: rem(40px);
+
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(24px);
+    }
+  }
+}
+
+.mb {
+  &-big {
+    margin-bottom: rem(50px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-medium {
+    margin-bottom: rem(40px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(24px);
+    }
+  }
+}
+
+.mr-middle {
+  margin-right: rem(24px);
+
+  @include media-breakpoint-down(lg) {
+    margin-right: rem(10px);
+  }
+}
+
+.ml-middle {
+  margin-left: rem(24px);
+
+  @include media-breakpoint-down(lg) {
+    margin-left: rem(10px);
+  }
+}
+
+.ml-8 {
+  margin-left: rem(8px);
+}

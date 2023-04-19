@@ -1,0 +1,102 @@
+section.services
+
+  -
+    servicesItems = [
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-immunologist.svg',
+        title: 'Аллерголог-иммунолог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-gynecologist.svg',
+        title: 'Акушер-гинеколог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-gastroenterologist.svg',
+        title: 'Гастроэнтеролог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-hematologist.svg',
+        title: 'Гематолог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-dermatovenereologist.svg',
+        title: 'Дерматовенеролог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-cardiologist.svg',
+        title: 'Кардиолог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-coloproctologist.svg',
+        title: 'Колопроктолог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-otorhinolaryngologist.svg',
+        title: 'Оториноларинголог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+      {
+        href: 'service.html',
+        imgUrl: 'img/services/services-ophthalmologist.svg',
+        title: 'Офтальмолог',
+        subtitle: 'Небольшой текст-описание врача',
+      },
+    ]
+
+  .container
+    .services__header
+      +title({
+        tag: 'h3',
+        type: 'medium',
+        content: 'Услуги',
+        classes: 'label',
+      })
+      .row.justify-content-between.align-items-center
+        .col-12.col-md-auto
+          +tabs([
+            {
+              place: 'services',
+              name: 'Клиника',
+              checked: true,
+            },
+            {
+              place: 'services',
+              name: 'Стоматология',
+            },
+          ])
+        .col-12.col-md-auto
+          +switch()
+    .services__content
+      .row.g-lg-4
+        each item in servicesItems
+          .col-12.col-lg-4
+            +item({
+              href: item.href,
+              imgUrl: item.imgUrl,
+              title: item.title,
+              subtitle: item.subtitle,
+            })
+    .row.justify-content-center
+      .col-12.col-lg-auto
+        +button({
+          tag: 'a',
+          link: {href: 'services.html'},
+          type: 'outline',
+          content: 'Все услуги',
+          classes: 'd-block d-inline-lg-block text-center mx-auto button-outline--black services__content-button',
+        })

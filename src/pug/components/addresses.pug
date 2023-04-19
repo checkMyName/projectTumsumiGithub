@@ -1,0 +1,40 @@
+section.addresses
+  .container
+    .row.justify-content-between.align-items-center
+      .col-12.col-lg-5.col-xl-4
+        .addresses__content
+          +title({
+            tag: 'h4',
+            type: 'medium',
+            content: 'Адреса клиник',
+            classes: 'title-mb-big',
+          })
+          +tabs([
+            {
+              place: 'addresses',
+              name: 'Клиника',
+              checked: true,
+            },
+            {
+              place: 'addresses',
+              name: 'Стоматология',
+            },
+          ])
+          .addresses__content-block
+            p.text-big.text-500.addresses__content-address Тюмень, Одесская, 54, 6 этаж
+            .d-flex.flex-column.addresses__content-info
+              span.mb-2.text-500.text-secondary.text-uppercase.text-ex-small Телефон
+              a(href="tel:+73452689201" class="text-normal") +7 (3452) 68-92-01
+            .d-flex.flex-column.addresses__content-info
+              span.mb-2.text-500.text-secondary.text-uppercase.text-ex-small Режим работы
+              p.text-normal
+                span.text-secondary Пн-Пт
+                span.ms-2 8:00-20:00
+              p.text-normal
+                span.text-secondary Сб
+                span.ms-2 8:00-14:00
+          a(href="#" class="d-flex justify-content-center align-items-center button button-red button-red--small addresses__content-button")
+            span.button-dot
+            span Онлайн запись
+      .col-12.col-lg-7
+        #map.addresses__map.js-addresses-map

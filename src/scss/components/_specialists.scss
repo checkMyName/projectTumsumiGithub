@@ -1,0 +1,108 @@
+@import "../utilities/variables";
+
+.home__specialists {
+  @include media-breakpoint-up(md) {
+    padding-top: rem(120px);
+
+    .slider__button-list {
+      &.top {
+        display: none;
+      }
+
+      &.bottom {
+        display: block;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: rem(40px);
+    overflow: hidden;
+
+    .slider__button-list {
+      &.top {
+        display: block;
+      }
+
+      &.bottom {
+        display: none;
+      }
+    }
+  }
+}
+
+.specialists {
+  @include media-breakpoint-down(md) {
+    .label {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(48px);
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem(24px);
+      }
+    }
+  }
+
+  &__controlls {
+    @include media-breakpoint-up(md) {
+      margin-top: rem(16px);
+      margin-bottom: rem(48px);
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(16px);
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      overflow: visible;
+    }
+
+    &-button {
+      &-prev,
+      &-next {
+        &.is-disabled {
+          user-select: none;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+
+      &-next {
+        margin-left: rem(8px);
+        .svg-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-pagination {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
+      margin-top: rem(40px);
+      .slider__pagination-bullet {
+        &:not(.is-active) {
+          background-color: get($colors, gainsboro);
+        }
+      }
+
+      .slider__pagination-bullet + .slider__pagination-bullet {
+        margin-left: rem(8px);
+      }
+    }
+  }
+}

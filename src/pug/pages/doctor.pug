@@ -1,0 +1,74 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Страница врача';
+  - pageRootClass = 'doctor';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Врачи',
+      href: 'doctors.html',
+    },
+    {
+      name: 'Верясов Дмитрий Александрович',
+    },
+  ])
+  .doctor
+    
+    .doctor__header
+      .container
+        .row.justify-content-between
+          .col-12.col-lg-7
+            span.text-uppercase.text-ex-small.text-secondary Высшая категория
+            +title({
+              tag: 'h2',
+              type: 'medium',
+              content: 'Верясов Дмитрий Александрович',
+              classes: 'doctor__header-title',
+            })
+            span.text-500.doctor__header-post Главный врач
+          .col-12.col-lg-auto
+            .position-relative
+              .doctor__header-photo
+                +lazyImage({
+                  imageSrc: 'img/specialists/specialist-photo-1',
+                  type: 'img',
+                  classes: '',
+                  imageClasses: '',
+                })
+                .row.gx-2.justify-content-between.doctor__header-buttons
+                  .col-6
+                    a(href="#" class="d-flex align-items-center button button-red")
+                      span.button-dot
+                      span Записаться
+                  .col-6
+                    a(href="#" class="text-dark button button-white")
+                      +icon('calendar', 'icon', '18px', '18px')
+                      span.ms-2 Расписание
+    .doctor__content
+      .container
+        .row
+          .col-12.col-lg-7
+            .doctor__content-part
+              h4.mb-4.text-big.text-500 Описание
+              p.text-normal.text-dark Врач акушер-гинеколог высшей категории, врач ультразвуковой диагностики в акушерстве и гинекологии, д.м.н., профессор кафедры акушерства и гинекологии института материнства и детства Тюменского ГМУ
+            .doctor__content-part
+              p.mb-4.text-big.text-500 Документы сотрудника
+              .doctor__content-list
+                .row.gx-4.gy-5
+                  each item in [1, 2, 3, 4, 5]
+                    .col-6.col-md-3
+                      .doctor__content-charter
+                        .doctor__content-img
+                          img(src="img/doctor/charter.png" alt="charter").js-image-zoom-item
+                          .doctor__content-img-backdrop
+                            +icon('eye')
+                        a(href="#" class="d-inline-block mt-3 text-dark text-smaller") Диплом о прохождении обученя в супер ВУЗе по повышению квалификации.pdf

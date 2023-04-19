@@ -1,0 +1,161 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Цены';
+  - pageRootClass = 'prices';
+  - pageId = 'js-page-prices'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    pricesItems = [
+      {
+        name: 'Вакцинопрофилактика',
+        count: '9'
+      },
+      {
+        name: 'Ультразвуковое исследование детям',
+        count: '10'
+      },
+      {
+        name: 'Ультразвуковое исследование',
+        count: '5'
+      },
+      {
+        name: 'Акушерско-гинекологическое отделение',
+        count: '3'
+      },
+      {
+        name: 'Консультативный прием специалистов',
+        count: '19'
+      },
+      {
+        name: 'Манипуляции аллерголога-иммунолога',
+        count: '8'
+      },
+      {
+        name: 'Оказание услуг врача амбулаторно-пликлинического отделения на дому',
+        count: '4'
+      },
+      {
+        name: 'Занятия в школах здоровья',
+        count: '24'
+      },
+      {
+        name: 'Рефлексотерапия',
+        count: '4'
+      },
+      {
+        name: 'Лечебно-профилактическое отделение',
+        count: '13'
+      },
+      {
+        name: 'Контурная пластика',
+        count: '5'
+      },
+      {
+        name: 'Мезотерапия',
+        count: '2'
+      },
+      {
+        name: 'Перманентный макияж (микропигментнрованне)',
+        count: '14'
+      },
+      {
+        name: 'Плазмолифтинг',
+        count: '8'
+      },
+    ]
+
+  template#search-element
+    .border-horizontal
+      span(data-result-name) {{name}}
+      span(data-result-price).text-500 {{price}}
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Цены',
+    },
+  ])
+  .prices.js-prices
+    .container
+      +title({
+        tag: 'h3',
+        type: 'medium',
+        content: 'Цены',
+        classes: 'mb-0',
+      })
+      form.d-flex.align-items-center.search.prices__search.js-prices-search
+        button(type="button" class="d-flex me-1").js-prices-search-button
+          +icon('magnifier', 'icon', '16px', '16px')
+        input(id="pricesAutoComplete"  name='search' placeholder='Поиск' value='' class="text-secondary").js-prices-search-input
+        button(type="button" class="d-flex me-1 search__close").js-prices-search-close
+          +icon('close', 'icon', '9px', '9px')
+      .prices__search-result.js-prices-search-result
+      .prices__content 
+        .row.justify-content-between.align-items-center
+          .col-12.col-lg-auto
+            +tabs([
+              {
+                place: 'prices',
+                name: 'Клиника',
+                checked: true,
+              },
+              {
+                place: 'prices',
+                name: 'Стоматология',
+              },
+              {
+                place: 'prices',
+                name: 'Лабораторные исследования',
+              },
+            ])
+          .col-12.col-md-auto
+            +switch()
+        each item, i in pricesItems
+          .prices__collapse
+            button(type="button" class="prices__collapse-button" data-bs-toggle="collapse" data-bs-target="#collapsePrices" + i aria-expanded="false" aria-controls="collapsePrices" + i)
+              span.text-start.text-500
+                span #{item.name} 
+                span.text-secondary #{item.count}
+              .prices__collapse-button-icon
+                +icon('arrow-down', 'icon')
+            div(class="collapse prices__collapse-block" id="collapsePrices" + i)
+              .prices__collapse-wrapper.js-prices-search-area
+                .border-horizontal
+                  span(data-name) УЗИ геморроидальных узлов
+                  span(data-price).text-500 650 ₽
+                .border-horizontal
+                  span(data-name) Ультразвуковое исследование плода в сроке 14 – 40 недель при одноплодной беременности, включая доплерометрию сосудов матки и пуповины (экспертный уровень диагностики скрининга на врождённые пороки развития плода). Врач д.м.н., профессор Винокурова Е А.
+                  span(data-price).text-500 3 800 ₽
+                .border-horizontal
+                  span(data-name) Комплексное УЗИ детей при поступлении в образовательные учреждения - брюшной полости, почек, мочевого пузыря, щитовидной железы, малого таза (у девочек), мошонки (у мальчиков)
+                  span(data-price).text-500 2 300 ₽
+                .border-horizontal
+                  span(data-name) Комплексное УЗИ новорожденных (брюшной полости, почек, мочевого пузыря, тазобедренных суставов)
+                  span(data-price).text-500 2 500 ₽
+                .border-horizontal
+                  span(data-name) Ультразвуковое исследование тазобедренных суставов детям до 1 года
+                  span(data-price).text-500 800 ₽
+                .border-horizontal
+                  span(data-name) Нейросонография (Ультразвуковое исследование головного мозга детям до 1 года)
+                  span(data-price).text-500 1 000 ₽
+                .border-horizontal
+                  span(data-name) Ультразвуковое исследование плода в сроке 14 – 40 недель при многоплодной беременности, включая доплерометрию сосудов матки и пуповины (экспертный уровень диагностики скрининга на врождённые пороки развития плода). Врач д.м.н., профессор Винокурова Е А.
+                  span(data-price).text-500 4 100 ₽
+                .border-horizontal
+                  span(data-name) Ультразвуковое исследование вилочковой железы
+                  span(data-price).text-500 1 000 ₽
+                .border-horizontal
+                  span(data-name) Ультразвуковое исследование верхних отделов желудочно-кишечного тракта (пищевод, желудок, луковица двенадцатиперстной кишки)
+                  span(data-price).text-500 1 300 ₽
+                .border-horizontal
+                  span(data-name) 3- 4-D реконструкция при выполнении ультразвукового исследования плода с записью на электронный носитель. Врач д.м.н., профессор Винокурова Е А.
+                  span(data-price).text-500 800 ₽
+    button(type="button" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'})" class="scrollup")
+      +icon('download') 

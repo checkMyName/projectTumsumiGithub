@@ -1,0 +1,105 @@
+.specialists.js-specialists
+
+  -
+    specialistItems = [
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-2',
+        category: 'Первая категория',
+        name: 'Кобелева Елена <br> Дмитриевна',
+        post: 'Заместитель главного врача по клинико-экспертной работе',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-3',
+        category: 'Высшая категория',
+        name: 'Скоробогатова Ирина <br> Анатольевна',
+        post: 'Заместитель главного врача по медицинской части',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-4',
+        category: 'Высшая категория',
+        name: 'Стороженко Марина <br> Вячеславовна',
+        post: 'Начальник отдела по организационно-методической работе, врач-методист',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-2',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-3',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+    ]
+
+  .container
+    .specialists__content
+      .d-flex.justify-content-between.align-items-center
+        +title({
+          tag: 'h3',
+          type: 'medium',
+          content: 'Cпециалисты',
+          classes: 'label',
+        })
+        .d-flex.slider__button-list.top
+          button(type='button' class="button button-arrow slider__button-prev").js-slider-button-prev
+            +icon('arrow-left', 'icon')
+          button(type='button' class="button button-arrow slider__button-next").js-slider-button-next
+            +icon('arrow-left', 'icon')
+      .d-flex.justify-content-between.specialists__controlls
+        +tabs([
+          {
+            place: 'specialists',
+            name: 'Клиника',
+            checked: true,
+          },
+          {
+            place: 'specialists',
+            name: 'Стоматология',
+          },
+        ])
+        .d-flex.slider__button-list.bottom
+          button(type='button' class="button button-arrow slider__button-prev").js-slider-button-prev
+            +icon('arrow-left', 'icon')
+          button(type='button' class="button button-arrow slider__button-next").js-slider-button-next
+            +icon('arrow-left', 'icon')
+      .swiper.specialists__slider.js-specialists-slider
+        .swiper-wrapper
+          each specialist in specialistItems
+            .swiper-slide.specialists__slider-slide
+              +specItem({
+                photoUrl: specialist.photoUrl,
+                category: specialist.category,
+                name: specialist.name,
+                post: specialist.post,
+                description: specialist.description,
+              })
+        .specialists__slider-pagination
+          .d-flex.justify-content-center.js-slider-pagination
+            span(class="slider__pagination-bullet is-active")
+            span(class="slider__pagination-bullet")
+            span(class="slider__pagination-bullet")
+            span(class="slider__pagination-bullet")
+            span(class="slider__pagination-bullet")
+

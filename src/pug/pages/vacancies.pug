@@ -1,0 +1,81 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Вакансии';
+  - pageRootClass = 'vacancies';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    vacanciesItems = [
+      {
+        date: '16.08.2022',
+        title: 'Регистратор в сеть медицинских центров',
+        price: 'от 45 000 ₽',
+        description: 'Принимаются девушки с любым высшим образованием. Обучаем специальности по корпоративным стандартам нашей сети. Приятная внешность, грамотная речь, позитивный настрой - приветствуются. Обязательным условием является желание изучить большой объем информации об услугах наших медицинских центров.',
+      },
+      {
+        date: '16.08.2022',
+        title: 'Регистратор в сеть медицинских центров',
+        price: 'от 45 000 ₽',
+      },
+      {
+        date: '16.08.2022',
+        title: 'Регистратор в сеть медицинских центров',
+        price: 'от 45 000 ₽',
+        description: 'Принимаются девушки с любым высшим образованием. Обучаем специальности по корпоративным стандартам нашей сети. Приятная внешность, грамотная речь, позитивный настрой - приветствуются. Обязательным условием является желание изучить большой объем информации об услугах наших медицинских центров.',
+      },
+      {
+        date: '16.08.2022',
+        title: 'Медицинская сестра процедурная',
+        price: 'от 45 000 ₽',
+        list: [
+          'На полный день.',
+          'Официальное трудоустройство.',
+          'Оплачиваемый отпуск.',
+          'Достойная зарплата.'
+        ]
+      },
+    ]
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Вакансии',
+    },
+  ])
+  .vacancies.bg-light
+    .container
+      .vacancies__content
+        +title({
+          tag: 'h3',
+          type: 'medium',
+          content: 'Вакансии <span class="text-secondary">4</span>',
+          classes: 'mb-0 vacancies__content-title',
+        })
+        each item in vacanciesItems
+          .border-radius-8.vacancies__content-item
+            p.mb-2.text-small.text-secondary.text-uppercase #{item.date}
+            h4.text-big #{item.title}
+            p.mb-0.text-500.text-medium.text-dark #{item.price}
+            if item.description
+              .vacancies__content-item-text
+                p.text-normal.text-500 Описание
+                p.text-normal.text-dark #{item.description}
+            if item.list
+              .vacancies__content-item-text
+                p.text-normal.text-500 Описание
+                ul.text-normal.mb-0.text-dark
+                  each elem in item.list
+                    li #{elem}
+            +button({
+              buttonType: 'button',
+              type: 'red',
+              content: 'Откликнуться',
+              classes: 'button-size-normal',
+            })

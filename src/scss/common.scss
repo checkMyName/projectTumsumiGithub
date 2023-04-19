@@ -1,0 +1,55 @@
+@import 'base/root';
+@import 'base/reboot';
+
+@import 'components/typography';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/form/group';
+@import 'components/form/field';
+@import 'components/form/radio-and-checkbox';
+@import 'components/form/validation';
+@import 'components/lazy';
+@import 'components/modal';
+@import 'components/buttons';
+@import 'components/toast';
+@import 'components/dropdown';
+@import 'components/breadcrumbs';
+@import 'components/menu';
+@import 'components/tabs';
+@import 'components/switch';
+@import 'components/item';
+@import 'components/specitem';
+@import 'components/general';
+@import 'components/specialists';
+@import 'components/addresses';
+@import 'components/datepicker';
+
+@import 'pages/home/intro';
+@import 'pages/home/services';
+@import 'pages/home/ourclinics';
+
+@import 'pages/search/search';
+
+@import 'pages/chapter/chapter';
+
+@import 'pages/doctors/doctors';
+
+@import 'pages/doctor/doctor';
+
+@import 'pages/prices/prices';
+
+@import 'pages/information/information';
+
+@import 'pages/info/info';
+
+@import 'pages/Q&A/Q&A';
+
+@import 'pages/vacancies/vacancies';
+
+@import 'pages/contacts/contacts';
+
+@import 'pages/articles/articles';
+
+@import 'pages/article/article';
+
+

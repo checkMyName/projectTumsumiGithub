@@ -1,0 +1,237 @@
+@import "../utilities/variables";
+
+.button {
+	@include transition;
+
+	@include media-breakpoint-down(sm) {
+		@include font-size(10px);
+	}
+
+	&-size {
+		&-normal {
+			padding: rem(12px) rem(18px);
+		}
+	}
+
+	&-outline {
+		@include font-size(14px);
+
+		padding: rem(10px) rem(16px);
+		border: 1px solid get($colors, danger);
+		border-radius: 8px;
+
+		&:hover {
+			color: get($colors, black);
+
+			.svg-icon {
+				stroke: get($colors, black);
+			}
+		}
+
+		&--black {
+			border: 1px solid get($colors, black);
+
+			&:hover {
+				border-color: get($colors, secondary);
+			}
+		}
+
+		// &--white {
+		// 	border: 1px solid get($colors, white);
+
+		// 	&:hover {
+		// 		border-color: get($colors, gainsboro);
+		// 	}
+		// }
+	}
+
+	&-red {
+		color: get($colors, white);
+		background-color: get($colors, danger);
+		border-radius: 8px;
+		// padding: rem(6px) rem(8px);
+
+		&:hover {
+			background-color: get($colors, darkred);
+
+			// .button-dot {
+			// 	&::after {
+			// 		transform: scale(4.5);
+			// 	}
+			// }
+		}
+
+		.button-dot {
+			background-color: get($colors, white);
+
+			&::after {
+				background-color: rgba(get($colors, white), 0.4);
+			}
+		}
+
+		&--big {
+			padding: rem(10px) rem(16px);
+		}
+
+		&--small {
+			@include media-breakpoint-up(md) {
+				padding: rem(10px) rem(16px);
+			}
+
+			@include media-breakpoint-down(md) {
+				padding: rem(6px) rem(8px);
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding: rem(4px) rem(8px);
+			}
+		}
+
+		// .button-dot {
+		// 	position: relative;
+		// 	width: rem(4px);
+		// 	height: rem(4px);
+		// 	background-color: get($colors, white);
+		// 	border-radius: 50%;
+		// 	margin-right: rem(8px);
+
+		// }
+
+		// @include media-breakpoint-up(md) {
+		// 	padding: rem(10px) rem(16px);
+		// }
+
+		// @include media-breakpoint-down(md) {
+		// 	padding: rem(6px) rem(8px);
+		// }
+
+		// @include media-breakpoint-down(sm) {
+		// 	padding: rem(3px) rem(8px) rem(3px) 0;
+		// }
+	}
+
+	&-dot {
+		@include transition;
+
+		display: block;
+		position: relative;
+		width: rem(4px);
+		height: rem(4px);
+		// background-color: get($colors, white);
+		border-radius: 50%;
+		margin-right: rem(10px);		
+
+		&::after {
+			@include transition;
+			@include pseudo;
+
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			animation: pulse 1s infinite linear;
+		}
+	}
+
+	&-white {
+		border: 1px solid get($colors, gainsboro);
+		border-radius: 8px;
+		align-items: center;
+
+		&:hover {
+			color: get($colors, secondary);
+
+			.button-dot {
+				&::after {
+					transform: scale(4.5);
+				}
+			}
+		}
+
+		.button-dot {
+			background-color: get($colors, danger);
+
+			&::after {
+				background-color: rgba(get($colors, danger), 0.2);
+			}
+		}
+	}
+
+	&-arrow {
+		@include transition;
+
+		padding: rem(10px);
+		background-color: get($colors, white);
+		border-radius: 8px;
+		border: 1px solid get($colors, gainsboro);
+
+		@include media-breakpoint-down(md) {
+			padding: rem(6px);
+		}
+
+		.svg-icon {
+			width: rem(24px);
+			height: rem(24px);
+			stroke: get($colors, secondary);
+		}
+
+		&:hover {
+			border: 1px solid get($colors, danger);
+
+			.svg-icon {
+				stroke: get($colors, dark);
+			}
+		}
+
+		&--reverse {
+			.svg-icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&-pagination {
+		@include transition;
+		@include font-size(16px);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: rem(10px);
+		background-color: get($colors, white);
+		border-radius: 8px;
+		border: 1px solid get($colors, gainsboro);
+		font-weight: 500;
+		width: rem(46px);
+		height: 100%;
+
+		@include media-breakpoint-down(lg) {
+			width: rem(36px);
+		}
+
+		&.current {
+			color: get($colors, white);
+			background-color: get($colors, danger);
+		}
+
+		&:hover {
+			color: get($colors, danger);
+			border: 1px solid get($colors, danger);
+		}
+
+		@include media-breakpoint-down(md) {
+			padding: rem(6px);
+		}
+	}
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(4.5);
+  }
+}

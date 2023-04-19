@@ -1,0 +1,91 @@
+@import "../utilities/variables";
+
+.switch {
+  $button-width: rem(48px);
+  $button-height: rem(28px);
+  $button-circle-size: rem(22px);
+
+  display: flex;
+
+  @include media-breakpoint-down(lg) {
+    margin-top: rem(16px);
+    width: 100%;
+  }
+
+  &__side {
+    color: get($colors, secondary);
+    font-weight: 500;
+
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      flex-grow: 1;
+      flex-shrink: 0;
+      text-align: center;
+      width: 50%;
+    }
+
+    span {
+      margin-left: rem(8px);
+
+      @include media-breakpoint-down(lg) {
+        @include font-size(14px);
+      }
+    }
+
+    .svg-icon {
+      stroke: get($colors, secondary);
+    }
+
+    &.is-active {
+      @include media-breakpoint-up(sm) {
+        color: get($colors, black);
+
+        .svg-icon {
+          stroke: get($colors, black);
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        color: get($colors, danger);
+
+        .svg-icon {
+          stroke: get($colors, danger);
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: $button-width;
+    background-color: get($colors, gainsboro);
+    margin: 0 rem(24px);
+    padding: rem(3px);
+    border-radius: 30px;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      @include transition;
+      display: block;
+
+      width: $button-circle-size;
+      height: $button-circle-size;
+      background-color: get($colors, danger);
+      border-radius: 50%;
+    }
+
+    input:checked + span {
+      margin-left: 50%;
+    }
+  }
+}

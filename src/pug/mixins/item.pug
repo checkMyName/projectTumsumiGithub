@@ -1,0 +1,14 @@
+mixin item(data)
+
+  a(href=data.href class="item")
+    .d-flex.justify-content-between
+      .item__text
+        h4.text-medium.item__text-title #{data.title}
+        p.text-dark #{data.subtitle}
+      .item__image
+        +lazyImage({
+          imageSrc: data.imgUrl,
+          type: 'img',
+          classes: '',
+          imageClasses: '',
+        })

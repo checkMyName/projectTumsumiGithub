@@ -1,0 +1,29 @@
+extends ../../layout/modal
+
+block modalVariables
+  - modalId = 'js-email-check-modal'
+  - modalClasses = 'modal--email-check'
+
+block modalContent
+  .modal__content
+    h4.text-big.modal__content-title Проверьте почту
+    p.text-normal.text-dark На почту #[span.text-black.text-500 myname******il.ru] мы отправили письмо с кодом подтверждения.
+    form(class=['modal__content-form js-form-validate js-code-validate'])
+      .row.justify-content-center.gx-3
+        .col-12
+          +field({
+            type: 'number',
+            placeholder: '0000',
+            classes: 'p-3 text-center modal__content-form-code js-modal-code',
+            validate: true,
+            validateLength: 4,
+            validateTextInvalid: 'Код введён не верно!',
+            maxlength: 4,
+          })
+        .col-12
+          +button({
+            buttonType: 'submit',
+            type: 'red',
+            content: 'Отправить',
+            classes: 'w-100 button-size-normal modal__content-form-button'
+          })

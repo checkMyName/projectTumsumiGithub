@@ -1,0 +1,12 @@
+mixin breadcrumbs(items, classes)
+
+  .breadcrumbs__wrapper
+    .container
+      ul(class=['breadcrumbs mb-0', classes])
+        each item, index in items
+          li(class=['text-small breadcrumbs__item'])
+            if index !== items.length - 1
+              a(href=item.href || '#', class=['breadcrumbs-link'])= item.name
+              +icon('arrow-right', 'icon breadcrumbs__icon')
+            else
+              span(class=['breadcrumbs__current'])= item.name

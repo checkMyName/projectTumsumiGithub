@@ -1,0 +1,15 @@
+extends ../layout/main
+
+block mainVariables
+	- pageTitle = 'Главная';
+	- pageRootClass = 'home';
+	- pageId = 'js-page-home'
+	- activeNavIndex = 0
+
+block mainContent
+	include ../components/home/intro
+	include ../components/home/services
+	section.home__specialists
+		include ../components/home/specialists
+	include ../components/home/ourclinics
+	include ../components/addresses

@@ -1,0 +1,183 @@
+@import "../utilities/variables";
+
+.header {
+  $header-icon-size: rem(20px);
+
+  padding: rem(17px) 0 rem(1px) 0;
+  background-color: get($colors, light);
+
+  @include media-breakpoint-down(lg) {
+    padding: rem(17px) 0 rem(2px) 0;
+  }
+
+  &-icon {
+    @include transition;
+
+    width: $header-icon-size;
+    height: $header-icon-size;
+    fill: none;
+    stroke: get($colors, secondary);
+    stroke-width: 1.5px;
+
+    @include media-breakpoint-between(md, lg) {
+      width: $header-icon-size * 1.5;
+      height: $header-icon-size * 1.5;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: $header-icon-size * 0.85;
+      height: $header-icon-size * 0.85;
+      // width: $header-icon-size * 1.1;
+      // height: $header-icon-size * 1.1;
+    }
+  }
+
+  &__logo {
+    display: block;
+
+    .svg-icon {
+      display: block;
+
+      @include media-breakpoint-up(lg) {
+        width: rem(208px);
+        height: rem(45px);
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        width: rem(160px);
+        height: rem(40px);
+      }
+
+      @include media-breakpoint-down(md) {
+        width: rem(120px);
+        height: rem(30px);
+      }
+    }
+  }
+
+  &__search {
+    padding: rem(12px) rem(14px);
+    background-color: get($colors, white);
+    border-radius: 8px;
+
+    input {
+      @include font-size(14px);
+
+      flex-grow: 1;
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__contacts {
+    $arrow-size: rem(30px);
+
+    position: relative;
+    max-width: rem(210px);
+
+    &:hover {
+      @include media-breakpoint-down(lg) {
+        .header__contacts-block {
+          opacity: 1;
+          user-select: auto;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &-phone {
+      @include transition;
+
+      @include media-breakpoint-down(xl) {
+        @include font-size(14px);
+      }
+
+      @include media-breakpoint-down(lg) {
+        color: get($colors, danger);
+        text-decoration: underline;
+      }
+
+      &:hover {
+        .svg-icon {
+          stroke: get($colors, black);
+        }
+      }
+    }
+
+    &-name {
+      @include media-breakpoint-up(lg) {
+        margin-left: $header-icon-size * 1.5;
+      }
+    }
+
+    &-block {
+      @include transition;
+
+      position: absolute;
+      top: 100%;
+      right: -$arrow-size * 0.8;
+      opacity: 0;
+      padding-top: $arrow-size * 0.7;
+      min-width: rem(206px);
+      user-select: none;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    &-wrapper {
+      position: relative;
+      padding: rem(16px);
+      background-color: get($colors, white);
+      border-radius: 8px;
+      box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+
+      &::before {
+        @include pseudo;
+
+        top: -$arrow-size / 2.9;
+        right: $arrow-size / 1.5;
+        width: $arrow-size;
+        height: $arrow-size;
+        background-color: get($colors, white);
+        transform: rotate(45deg);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__nav {
+    margin: rem(28px) 0;
+  }
+
+  &__menu {
+    span {
+      @include media-breakpoint-up(sm) {
+        font-weight: 700;
+      }
+
+      @include media-breakpoint-down(sm) {
+        @include font-size(12px);
+
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: rem(8px);
+    background-color: get($colors, white);
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(7px) 0;
+    }
+
+    .button {
+      @include font-size(14px);
+      font-weight: 500;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(10px);
+      }
+    }
+  }
+}

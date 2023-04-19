@@ -1,0 +1,95 @@
+footer(class=['footer', 'js-footer'])
+	hr.footer__divider
+	.container
+		.footer__top
+			.row.gx-4.gx-md-5.gx-lg-3.gx-xl-5.align-items-center
+				.col-auto
+					a(href="index.html").logo
+						+icon('logo')
+				.col-auto.col-lg-3.ms-auto.ms-lg-0
+					//- form.d-none.d-lg-flex.align-items-center.search.footer__search
+					//- 	button(type="button" class="d-flex me-1")
+					//- 		+icon('magnifier', '', '16px', '16px')
+					//- 	input(type='search' name='search' placeholder='Поиск услуги или врача' value='' class="text-secondary")
+					//- a(href="#").d-inline-block.d-lg-none
+					//- 	+icon('magnifier', 'header-icon')
+					form.d-none.d-lg-flex.align-items-center.search.footer__search.js-search
+						button(type="button" class="d-flex me-1")
+							+icon('magnifier', 'icon', '16px', '16px')
+						input(type='search' name='search' placeholder='Поиск услуги или врача' value='' class="text-secondary").js-search-input.js-search-input-highlight.js-search-input-outline
+						.search__dropdown.js-search-dropdown
+							.search__dropdown-content
+								.search__dropdown-part
+									p.text-uppercase.text-secondary.search__dropdown-part-label Услуга
+									p.text-normal.text-500.search__dropdown-part-name Гастроэнтеролог
+								.search__dropdown-part
+									p.text-uppercase.text-secondary.search__dropdown-part-label Врачи
+									.search__dropdown-part-name
+										p.text-normal.text-500 Гастроэнтеролог
+										p.mb-0.text-small Врач-акушер
+									.search__dropdown-part-name
+										p.text-normal.text-500 Гастроэнтеролог
+										p.mb-0.text-small Врач-акушер
+					a(href="search.html").d-inline-block.d-lg-none
+						+icon('magnifier', 'header-icon')
+				.col-auto.ms-lg-auto
+					button(type="button" class="text-dark button button-outline align-items-center footer__button").d-none.d-lg-flex
+						+icon('user', 'header-icon', '20px', '20px')
+						span.ml-8 Войти в ЛК
+					a(href="#").d-block.d-lg-none
+						+icon('user', 'header-icon', '20px', '20px')
+				.col-auto
+					a(href="#" class="d-flex align-items-center button button-red button-red--small footer__button")
+						span.button-dot
+						span Онлайн запись
+	hr.footer__divider
+	.container
+		.footer__nav.js-footer-nav
+			include nav
+	hr.footer__divider
+	.container
+		.footer__info
+			.row
+				.col-7.col-lg-auto.order-1.order-lg-1
+					p.mb-0.text-dark.text-uppercase.text-ex-small.text-500.d-none.d-lg-block Стоматологическая #[br] клиника
+					p.mb-0.text-uppercase.text-ex-small.text-dark.text-500.d-block.d-lg-none Стоматология
+					a(href="tel:+73452689201" class="text-big text-500 footer__info-phone") +7 (3452) 68-92-01
+					p.text-small.text-dark #[span.d-none.d-lg-inline Тюмень,] Республики, 44
+				.col-7.col-lg-auto.order-2.order-lg-1
+					p.mb-0.text-dark.text-uppercase.text-ex-small.text-500.d-none.d-lg-block Университетская #[br] многопрофильная клиника
+					p.mb-0.text-uppercase.text-ex-small.text-dark.text-500.d-block.d-lg-none Клиника
+					a(href="tel:+73452689201" class="text-big text-500 footer__info-phone") +7 (3452) 68-92-01
+					p.text-small.text-dark #[span.d-none.d-lg-inline Тюмень,] Одесская, 54, 6 этаж
+				.col-5.col-lg-auto.order-1.order-lg-1
+					p.text-uppercase.text-dark.text-ex-small.text-500 Режим работы
+					.text-small
+						p
+							span.text-dark Пн-Пт
+							span.ms-2 8:00-20:00
+						p
+							span.text-dark Сб
+							span.ms-2 8:00-14:00
+						p
+							span.text-dark Вс
+							span.ms-2 Выходной
+				.col-12.col-lg-4.ms-auto.order-3.order-lg-1.my-auto
+					.footer__social
+						.row.justify-content-lg-end.align-items-center.align-items-lg-start
+							.col-6.col-lg-12
+								p.mb-0.text-small.text-secondary.text-lg-end Следите за нами в соцсетях:
+							.col-auto.ms-auto
+								.footer__social-list.d-flex
+									a(href="#" class="footer__social-link")
+										+icon('facebook') 
+									a(href="#" class="footer__social-link")
+										+icon('VK') 
+									a(href="#" class="footer__social-link")
+										+icon('instagram') 
+		.footer__bottom
+			.row.align-items-center.text-smaller
+				.col-12.col-lg.text-center.text-lg-start.order-2.order-lg-1
+					p.mb-0.text-secondary.footer__bottom-license © 2011—2023 Тюменский государственный медицинский университет #[br.d-none.d-md-inline] Министерства здравоохранения. 625023, Тюмень, Одесская, 54
+				.col-12.col-lg-auto.text-center.text-lg-start.order-1.order-lg-1
+					a(href="#" class="text-decoration-underline text-dark d-block mb-2 mb-lg-0") Политика конфиденциальности 
+				.col-12.col-lg-auto.text-center.text-lg-start.order-1.order-lg-1
+					a(href="#" class="text-decoration-underline text-dark d-block mt-2 mt-lg-0") Пользовательское соглашение

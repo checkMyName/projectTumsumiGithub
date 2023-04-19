@@ -1,0 +1,5 @@
+@import 'mixins';
+
+@include font-face('DINPro', '../font/DINPro', $weight: 400);
+@include font-face('DINPro', '../font/DINPro-Medium', $weight: 500);
+@include font-face('DINPro', '../font/DINPro-Bold', $weight: 700);

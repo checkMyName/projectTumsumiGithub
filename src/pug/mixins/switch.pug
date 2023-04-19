@@ -1,0 +1,12 @@
+mixin switch(items)
+
+  .switch.js-switch
+    .switch__side.js-switch-side.is-active
+      +icon('user-alter', 'icon', '24px', '24px')
+      span Для взрослых
+    .switch__button.js-switch-button.d-none.d-sm-block
+      input(type="checkbox" name="switch")
+      span
+    .switch__side.js-switch-side
+      +icon('toddlers', 'icon', '24px', '24px')
+      span Для детей

@@ -1,0 +1,128 @@
+@import "../utilities/variables";
+
+.footer {
+  background-color: get($colors, white);
+
+  &__divider {
+    color: get($colors, light);
+  }
+
+  &__top {
+    padding: rem(23px) 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(16px) 0;
+    }
+  }
+
+  &__nav {
+    @include media-breakpoint-up(lg) {
+      margin: rem(32px) 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin: rem(24px) 0;
+      .nav {
+        &__content {
+          flex-wrap: wrap;
+        }
+
+        &__link,
+        &__dropdown {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__search {
+    background-color: get($colors, light);
+
+    input {
+      background-color: transparent;
+    }
+  }
+
+  &__dropdown {
+  }
+
+  &__info {
+    @include media-breakpoint-up(lg) {
+      padding: rem(36px) 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding-top: rem(24px);
+    }
+
+    &-phone {
+      display: block;
+      padding: rem(8px) 0;
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  &__social {
+    @include media-breakpoint-down(lg) {
+      padding: rem(16px) 0;
+      margin: rem(24px) 0;
+
+      border-top: 1px solid get($colors, gainsboro);
+      border-bottom: 1px solid get($colors, gainsboro);
+    }
+
+    &-list {
+      @include media-breakpoint-up(lg) {
+        margin-top: rem(10px);
+      }
+    }
+
+    &-link {
+      .svg-icon {
+        @include transition;
+
+        fill: get($colors, secondary);
+
+        width: rem(28px);
+        height: rem(28px);
+
+        // @include media-breakpoint-up(lg) {
+        //   width: rem(26px);
+        //   height: rem(26px);
+        // }
+
+        // @include media-breakpoint-down(lg) {
+        //   width: rem(28px);
+        //   height: rem(28px);
+        // }
+      }
+
+      &:hover {
+        .svg-icon {
+          fill: get($colors, danger);
+        }
+      }
+    }
+  }
+
+  .footer__social-link + .footer__social-link {
+    margin-left: rem(16px);
+  }
+
+  &__bottom {
+    padding-bottom: rem(32px);
+
+    &-license {
+      @include media-breakpoint-down(lg) {
+        margin-top: rem(24px);
+      }
+    }
+  }
+
+  &__button {
+    @include font-size(14px);
+  }
+}

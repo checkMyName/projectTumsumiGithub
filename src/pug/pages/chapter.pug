@@ -1,0 +1,423 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Страница раздела';
+  - pageRootClass = 'chapter';
+  - pageId = 'js-page-chapter'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    chapterItems = [
+      {
+        chapterName: 'Аллерголог-иммунолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+        isCurrent: true,
+      },
+      {
+        chapterName: 'Акушер-гинеколог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Гастроэнтеролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Гематолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Дерматовенеролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Кардиолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Колопроктолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Невролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Офтальмолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Оториноларинголог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Онколог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Педиатр',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Профпатолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Рентгенолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Рефлексотерапевт',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Терапевт',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Ультразвуковая диагностика',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Функциональная диагностика',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Эндокринолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Эндоскопист',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+    ]
+
+  -
+    chapterSliderItems = [
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Заместитель главного врача по клинико-экспертной работе',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий <br> Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+    ]
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name:'Услуги',
+      href: '#',
+    },
+    {
+      name:'Акушер-гинеколог',
+    },
+  ])
+  .chapter
+    .container
+      .chapter__wrapper.js-chapter-wrapper
+        .chapter__list
+          .d-none.d-lg-block
+            each item, i in chapterItems
+              span(href="#" class=["chapter__list-item py-1", item.isCurrent ? 'is-active' : null] data-content-id=i).js-chapter-item #{item.chapterName}
+          .d-block.d-lg-none.chapter__list-dropdown
+            +field({
+              type: 'dropdown',
+              classes: {
+                root: 'js-chapter-dropdown',
+                button: '',
+                list: 'js-chapter-dropdown-menu',
+                listItem: 'py-2 px-3'
+              },
+              options: [
+                {
+                  value: '0',
+                  content: 'Аллерголог-иммунолог',
+                  selected: true
+                },
+                {
+                  value: '1',
+                  content: 'Акушер-гинеколог'
+                },
+                {
+                  value: '2',
+                  content: 'Гастроэнтеролог'
+                },
+                {
+                  value: '3',
+                  content: 'Гематолог',
+                },
+                {
+                  value: '4',
+                  content: 'Дерматовенеролог',
+                },
+                {
+                  value: '5',
+                  content: 'Кардиолог',
+                },
+                {
+                  value: '6',
+                  content: 'Колопроктолог',
+                },
+                {
+                  value: '7',
+                  content: 'Невролог',
+                },
+                {
+                  value: '8',
+                  content: 'Офтальмолог',
+                },
+                {
+                  value: '9',
+                  content: 'Оториноларинголог',
+                },
+                {
+                  value: '10',
+                  content: 'Онколог',
+                },
+                {
+                  value: '11',
+                  content: 'Педиатр',
+                },
+                {
+                  value: '12',
+                  content: 'Профпатолог',
+                },
+                {
+                  value: '13',
+                  content: 'Рентгенолог',
+                },
+                {
+                  value: '14',
+                  content: 'Рефлексотерапевт',
+                },
+                {
+                  value: '15',
+                  content: 'Терапевт',
+                },
+                {
+                  value: '16',
+                  content: 'Ультразвуковая диагностика',
+                },
+                {
+                  value: '17',
+                  content: 'Функциональная диагностика',
+                },
+                {
+                  value: '18',
+                  content: 'Эндокринолог',
+                },
+                {
+                  value: '19',
+                  content: 'Эндоскопист',
+                },
+              ]
+            })
+        each content, i in chapterItems
+          div(class=["chapter__content", content.isCurrent ? 'is-active' : null] data-content-id=i).js-chapter-content
+            .d-flex.justify-content-between.chapter__part
+              .chapter__content-header
+                +title({
+                  tag: 'h4',
+                  type: 'medium',
+                  content: content.chapterName,
+                  classes: '',
+                })
+                .chapter__content-list
+                  a(href=content.chapterAboutHref class="text-decoration-underline text-danger chapter__content-list-link") Об услуге
+                  a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Услуги
+                  a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Цены
+                  a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Врачи
+              +lazyImage({
+                imageSrc: content.chapterImgUrl,
+                type: 'img',
+                classes: 'chapter__content-img d-none d-lg-block',
+                imageClasses: '',
+              })
+            .chapter__part.chapter__part--mr
+              +title({
+                tag: 'h4',
+                type: '',
+                content: 'Об услуге',
+                classes: 'chapter__part-title',
+              })
+              p.text-dark.text-normal Таким образом рамки и место обучения кадров играет важную роль в формировании систем массового участия. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации новых предложений.
+              br
+              p.text-dark.text-normal Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании существенных финансовых и административных условий. Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+            .chapter__part
+              +title({
+                tag: 'h4',
+                type: '',
+                content: 'Услуги',
+                classes: 'chapter__part-title',
+              })
+              .row.g-4
+                .col-12.col-lg-6.col-xl-4
+                  a(href="#" class="chapter__part-item")
+                    span(class='text-medium text-500 chapter__part-item-link') Кольпоскопия
+                    +icon('arrow-down', 'icon ms-auto chapter__part-item-icon')
+                .col-12.col-lg-6.col-xl-4
+                  a(href="#" class="chapter__part-item")
+                    span(class='text-medium text-500 chapter__part-item-link') Трускрин - диагностика
+                    +icon('arrow-down', 'icon ms-auto chapter__part-item-icon')
+                .col-12.col-lg-6.col-xl-4
+                  a(href="#" class="chapter__part-item")
+                    span(class='text-medium text-500 chapter__part-item-link') Ведение беременных
+                    +icon('arrow-down', 'icon ms-auto chapter__part-item-icon')
+                .col-12.col-lg-6.col-xl-4
+                  a(href="#" class="chapter__part-item")
+                    span(class='text-medium text-500 chapter__part-item-link') Пластика интимной зоны
+                    +icon('arrow-down', 'icon ms-auto chapter__part-item-icon')
+                .col-12.col-lg-6.col-xl-4
+                  a(href="#" class="chapter__part-item")
+                    span(class='text-medium text-500 chapter__part-item-link') Гирудотерапия в #[br.d-none.d-lg-inline] гинекологии
+                    +icon('arrow-down', 'icon ms-auto chapter__part-item-icon')
+            .chapter__part
+              +title({
+                tag: 'h4',
+                type: '',
+                content: 'Цены',
+                classes: 'chapter__part-title',
+              })
+              .chapter__part-prices.hidden.js-chapter-prices-block
+                .border-horizontal
+                  span УЗИ геморроидальных узлов
+                  span.text-500 650 ₽
+                .border-horizontal
+                  span Ультразвуковое исследование плода в сроке 14 – 40 недель при одноплодной беременности, включая доплерометрию сосудов матки и пуповины (экспертный уровень диагностики скрининга на врождённые пороки развития плода). Врач д.м.н., профессор Винокурова Е А.
+                  span.text-500 3 800 ₽
+                .border-horizontal
+                  span Комплексное УЗИ новорожденных (брюшной полости, почек, мочевого пузыря, тазобедренных суставов)
+                  span.text-500 2 500 ₽
+                .border-horizontal
+                  span УЗИ геморроидальных узлов
+                  span.text-500 650 ₽
+                .border-horizontal
+                  span Ультразвуковое исследование плода в сроке 14 – 40 недель при одноплодной беременности, включая доплерометрию сосудов матки и пуповины (экспертный уровень диагностики скрининга на врождённые пороки развития плода). Врач д.м.н., профессор Винокурова Е А.
+                  span.text-500 3 800 ₽
+                .border-horizontal
+                  span Комплексное УЗИ детей при поступлении в образовательные учреждения - брюшной полости, почек, мочевого пузыря, щитовидной железы, малого таза (у девочек), мошонки (у мальчиков)
+                  span.text-500 2 300 ₽
+                .border-horizontal
+                  span Комплексное УЗИ новорожденных (брюшной полости, почек, мочевого пузыря, тазобедренных суставов)
+                  span.text-500 2 500 ₽
+                .border-horizontal
+                  span УЗИ геморроидальных узлов
+                  span.text-500 650 ₽
+                .border-horizontal
+                  span Ультразвуковое исследование плода в сроке 14 – 40 недель при одноплодной беременности, включая доплерометрию сосудов матки и пуповины (экспертный уровень диагностики скрининга на врождённые пороки развития плода). Врач д.м.н., профессор Винокурова Е А.
+                  span.text-500 3 800 ₽
+                .border-horizontal
+                  span Комплексное УЗИ детей при поступлении в образовательные учреждения - брюшной полости, почек, мочевого пузыря, щитовидной железы, малого таза (у девочек), мошонки (у мальчиков)
+                  span.text-500 2 300 ₽
+                .border-horizontal
+                  span Комплексное УЗИ новорожденных (брюшной полости, почек, мочевого пузыря, тазобедренных суставов)
+                  span.text-500 2 500 ₽
+              button(type='button' class="button button-outline text-center mx-auto button-outline--black chapter__part-button js-chapter-prices-button")
+                span.chapter__part-button-open Все цены
+                span.chapter__part-button-close Скрыть
+              //- +button({
+              //-   buttonType: 'button',
+              //-   type: 'outline',
+              //-   content: 'Все цены',
+              //-   classes: 'text-center mx-auto button-outline--black chapter__part-button js-chapter-prices-button',
+              //- })
+            .chapter__part
+              .chapter__slider
+                .specialists__content
+                  .specialists__content-header
+                    +title({
+                      tag: 'h3',
+                      type: 'small',
+                      content: 'Cпециалисты',
+                      classes: 'mb-0',
+                    })
+                    .d-flex.slider__button-list
+                      button(type='button' class="button button-arrow slider__button-prev").js-chapter-button-prev
+                        +icon('arrow-left', 'icon')
+                      button(type='button' class="button button-arrow slider__button-next").js-chapter-button-next
+                        +icon('arrow-left', 'icon')
+                  .swiper.specialists__slider.js-chapter-slider
+                    .swiper-wrapper
+                      each specialist in chapterSliderItems
+                        .swiper-slide.specialists__slider-slide
+                          +specItem({
+                            photoUrl: specialist.photoUrl,
+                            category: specialist.category,
+                            name: specialist.name,
+                            post: specialist.post,
+                            description: specialist.description,
+                          })
+                    .specialists__slider-pagination
+                      .d-flex.justify-content-center.js-chapter-pagination
+                        span(class="slider__pagination-bullet is-active")
+                        span(class="slider__pagination-bullet")
+                        span(class="slider__pagination-bullet")
+                        span(class="slider__pagination-bullet")
+                        span(class="slider__pagination-bullet")

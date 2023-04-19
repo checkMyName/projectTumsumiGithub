@@ -1,0 +1,80 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Информация';
+  - pageRootClass = 'information';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    informationItems = [
+      {
+        name: 'Информация о клиниках',
+        link: 'info.html'
+      },
+      {
+        name: 'Контролирующие органы',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о страховых медицинских организациях, с которыми заключены договоры на оказание и оплату медицинской помощи по обязательному медицинскому страхованию.',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о правах и обязанностях граждан в сфере охраны здоровья.',
+        link: 'info.html'
+      },
+      {
+        name: 'О медицинской деятельности клиник:',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о перечне жизненно необходимых и важнейших лекарственных препаратах для медицинского применения.',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о перечне лекарственных препаратов, предназначенных для лиц больных гемофилией, муковисцидозом и еще рядом заболеваний.',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о перечне лекарственных препаратов для медицинского применения, в том числе назначаемых по решению врачебных комиссий.',
+        link: 'info.html'
+      },
+      {
+        name: 'Информация о перечне лекарственных препаратов, отпускаемых населению в соответствии с перечнем групп населения, которым препараты по рецептам отпускаются бесплатно.',
+        link: 'info.html'
+      },
+      {
+        name: 'Иная информация, опубликованная по решению учредителя или руководителя, опубликование которой является обязательным в соответствии с законодательством РФ.',
+        link: 'info.html'
+      },
+    ]
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Информация',
+    },
+  ])
+  .information
+    .container
+      +title({
+        tag: 'h3',
+        type: 'medium',
+        content: 'Информация',
+        classes: 'mb-0',
+      })
+      .information__content
+        .row.g-2.g-lg-4
+          each item in informationItems
+            .col-12.col-lg-6
+              .text-500.information__item
+                p.text-medium.information__item-text #{item.name}
+                a(href=item.link class="text-danger text-normal information__item-link")
+                  span Подробнее
+                  +icon('arrow-down', 'icon icon-red') 

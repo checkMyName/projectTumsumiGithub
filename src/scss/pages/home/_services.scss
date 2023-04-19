@@ -1,0 +1,84 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.page--home {
+  .services {
+    &__content {
+      @include media-breakpoint-down(lg) {
+        .row {
+          div[class^="col-"] {
+            display: none;
+            &:nth-child(-n + 4) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.services {
+  padding-top: rem(100px);
+  padding-bottom: rem(88px);
+  background-color: get($colors, light);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(37px);
+  }
+
+  &__header {
+    // .tabs__slide {
+
+    //   span {
+    //     height: auto;
+    //   }
+    // }
+
+    .title {
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem(16px);
+      }
+    }
+  }
+
+  &__content {
+    margin: rem(48px) 0;
+
+    // @include media-breakpoint-down(lg) {
+    //   margin-top: rem(24px);
+    //   margin-bottom: rem(37px);
+    // }
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(16px);
+      margin-bottom: rem(24px);
+
+      // .row {
+      //   div[class^="col-"] {
+      //     display: none;
+      //     &:nth-child(-n + 4) {
+      //       display: block;
+      //     }
+      //   }
+      // }
+    }
+
+    &-button {
+      @include media-breakpoint-up(lg) {
+        @include font-size(16px);
+
+        padding: rem(16px) rem(24px);
+      }
+
+      @include media-breakpoint-down(lg) {
+        padding: rem(12px) rem(24px);
+      }
+
+      @include media-breakpoint-down(md) {
+        font-weight: 500;
+      }
+    }
+  }
+}

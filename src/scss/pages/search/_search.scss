@@ -1,0 +1,50 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.search-page {
+  padding-top: rem(40px);
+  padding-bottom: rem(70px);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(38px);
+  }
+
+  &__title {
+    margin-bottom: rem(32px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__search {
+    background-color: get($colors, light);
+
+    input {
+      background-color: get($colors, light);
+    }
+  }
+
+  &__content {
+  }
+
+  &__part {
+    margin-top: rem(32px);
+
+    &-label {
+      @include font-size(14px);
+    }
+
+    &-item {
+      display: block;
+      padding: rem(16px) 0;
+      border-top: 1px solid get($colors, gainsboro);
+
+      &:last-child {
+        border-bottom: 1px solid get($colors, gainsboro);
+      }
+    }
+  }
+}

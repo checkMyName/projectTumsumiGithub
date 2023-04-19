@@ -1,0 +1,9 @@
+block modalVariables
+
+div(
+  class=['modal js-modal fade', modalClasses || null]
+  id=modalId
+  aria-hidden='true'
+)
+  div(class=['modal-dialog', 'modal-dialog-centered', 'modal-dialog-scrollable'])
+    block modalContent

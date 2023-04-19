@@ -1,0 +1,102 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.articles {
+  position: relative;
+  padding-top: rem(56px);
+  padding-bottom: rem(130px);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(47px);
+  }
+
+  &__title {
+    margin-bottom: rem(50px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        .articles__item-img-label {
+          opacity: 1;
+        }
+
+        .articles__item-title {
+          color: get($colors, danger);
+        }
+      }
+    }
+
+    &-block {
+      margin: rem(24px) 0;
+
+      @include media-breakpoint-down(lg) {
+        margin: rem(8px) 0;
+      }
+    }
+
+    &-title {
+      @include transition;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(14px);
+      }
+    }
+
+    &-text {
+      margin-top: rem(16px);
+
+      @include media-breakpoint-down(lg) {
+        margin: rem(8px) 0;
+      }
+
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      max-height: rem(60px);
+    }
+
+    &-img {
+      position: relative;
+
+      &-label {
+        @include transition;
+
+        position: absolute;
+        top: rem(16px);
+        right: rem(16px);
+        display: inline-block;
+        padding: rem(2px) rem(4px);
+        background-color: rgba(get($colors, charlestongreen), $alpha: 0.1);
+        border-radius: 30px;
+
+        @include media-breakpoint-up(lg) {
+          opacity: 0;
+        }
+
+        .svg-icon {
+          width: rem(22px);
+          height: rem(22px);
+        }
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: rem(56px);
+
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(24px);
+    }
+  }
+}

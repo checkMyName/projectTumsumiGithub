@@ -1,0 +1,65 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.information {
+  padding-top: rem(56px);
+  padding-bottom: rem(150px);
+  background-color: get($colors, light);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(16px);
+  }
+
+  &__content {
+    margin-top: rem(40px);
+
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(24px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: get($colors, white);
+
+    @include media-breakpoint-up(lg) {
+      height: rem(192px);
+      padding: rem(32px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(16px);
+    }
+
+    &-text {
+      max-height: 80%;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+
+    &-link {
+      span {
+        display: inline-block;
+        margin-right: rem(15px);
+
+        @include media-breakpoint-down(lg) {
+          margin-right: rem(8px);
+        }
+      }
+
+      .svg-icon {
+        width: rem(8px);
+        height: rem(8px);
+
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

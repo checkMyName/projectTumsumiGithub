@@ -1,0 +1,84 @@
+@import "../utilities/variables";
+
+.page--home {
+  .tabs__slide {
+    span {
+      height: auto;
+    }
+  }
+}
+
+.tabs {
+  display: inline-block;
+  padding: rem(3px);
+  background-color: get($colors, white);
+  border: 1px solid get($colors, gainsboro);
+  border-radius: 8px;
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    padding: rem(2px);
+  }
+
+  &__slide {
+    position: relative;
+
+    text-align: center;
+
+    &:hover {
+      span {
+        background-color: get($colors, light);
+      }
+    }
+
+    // & + .tabs__slide {
+    //   margin-left: rem(4px);
+    // }
+
+    @include media-breakpoint-up(md) {
+      min-width: rem(140px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      // width: 50%;
+      flex-grow: 1;
+      // flex-shrink: 0;
+      text-align: center;
+      height: 100%;
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    span {
+      @include transition;
+
+      display: block;
+      padding: rem(8px) rem(19px);
+      border-radius: 6px;
+
+      @include media-breakpoint-down(lg) {
+        @include font-size(12px);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: rem(42px);
+        padding: rem(6px) rem(10px);
+        font-weight: 500;
+      }
+    }
+
+    input:checked + span {
+      color: get($colors, white);
+      background-color: get($colors, dark);
+    }
+  }
+}

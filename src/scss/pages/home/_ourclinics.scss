@@ -1,0 +1,130 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.ourclinics {
+  overflow: hidden;
+  padding: rem(120px) 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: rem(40px) 0;
+  }
+
+  &__title {
+    margin-bottom: rem(40px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__slider {
+    @include media-breakpoint-down(lg) {
+      overflow: visible;
+    }
+  }
+
+  &__content {
+    // @include media-breakpoint-up(lg) {
+    //   display: flex;
+    //   justify-content: space-between;
+    // }
+
+    &-title {
+      margin-bottom: rem(24px);
+
+      @include media-breakpoint-down(lg) {
+        font-size: rem(22px) !important;
+      }
+    }
+
+    .left {
+      .ourclinics__item-content-link {
+        .svg-icon {
+          stroke: get($colors, white);
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include transition(0.3s);
+
+    height: rem(600px);
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      width: 49.8%;
+
+      & + .ourclinics__item {
+        margin-left: rem(20px);
+      }
+
+      &:hover {
+        width: 60%;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      height: rem(420px);
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-content {
+      position: relative;
+      padding: rem(40px);
+
+      @include media-breakpoint-down(lg) {
+        padding: rem(16px);
+      }
+
+      &-icon {
+        width: rem(58px);
+        height: rem(58px);
+
+        @include media-breakpoint-down(lg) {
+          width: rem(23px);
+          height: rem(23px);
+        }
+      }
+
+      &-text {
+        width: 83%;
+
+        @include media-breakpoint-down(md) {
+          @include font-size(13px);
+          width: 100%;
+        }
+      }
+
+      &-link {
+        display: inline-block;
+        margin-top: rem(24px);
+
+        @include media-breakpoint-down(lg) {
+          @include font-size(14px);
+          margin-top: rem(8px);
+          font-weight: 500;
+        }
+
+        .svg-icon {
+          transform: rotate(-90deg);
+          margin-left: rem(7px);
+        }
+
+        &:hover {
+          .svg-icon {
+            stroke: get($colors, danger) !important;
+          }
+        }
+      }
+    }
+  }
+}

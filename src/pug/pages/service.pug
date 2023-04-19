@@ -1,0 +1,265 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Страница услуги';
+  - pageRootClass = 'service';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    chapterItems = [
+      {
+        chapterName: 'Аллерголог-иммунолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+        isCurrent: true,
+      },
+      {
+        chapterName: 'Акушер-гинеколог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Гастроэнтеролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Гематолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Дерматовенеролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Кардиолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Колопроктолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Невролог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Офтальмолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Оториноларинголог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Онколог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Педиатр',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Профпатолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Рентгенолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Рефлексотерапевт',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Терапевт',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Ультразвуковая диагностика',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Функциональная диагностика',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Эндокринолог',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+      {
+        chapterName: 'Эндоскопист',
+        chapterImgUrl: 'img/services/services-gynecologist',
+        chapterAboutHref: '#',
+      },
+    ]
+
+  -
+    chapterSliderItems = [
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Заместитель главного врача по клинико-экспертной работе',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+      {
+        photoUrl: 'img/specialists/specialist-photo-1',
+        category: 'Высшая категория',
+        name: 'Верясов Дмитрий Александрович',
+        post: 'Главный врач',
+        description: 'Врач-кардиолог, кандидат медицинских наук, доцент кафедры терапии с курсами эндокринологии, функциональной и ультразвуковой диагностики института клинической медицины Тюменского ГМУ',
+      },
+    ]
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name:'Услуги',
+      href: '#',
+    },
+    {
+      name:'Акушер-гинеколог',
+      href: '#',
+    },
+    {
+      name:'Кольпоскопия',
+    },
+  ])
+  .chapter
+    .container
+      .chapter__wrapper
+        .chapter__list
+          .d-none.d-lg-block
+            each item, i in chapterItems
+              a(href="#" class=["chapter__list-item py-1", item.isCurrent ? 'is-active' : null] data-content-id=i) #{item.chapterName}
+        div(class="chapter__content")
+          .d-flex.justify-content-between.chapter__part
+            .chapter__content-header
+              +title({
+                tag: 'h4',
+                type: 'medium',
+                content: 'Кольпоскопия',
+                classes: '',
+              })
+              .chapter__content-list
+                a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Об услуге
+                a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Цены
+                a(href='#' class="text-decoration-underline text-danger chapter__content-list-link") Врачи
+            +lazyImage({
+              imageSrc: 'img/services/services-gynecologist',
+              type: 'img',
+              classes: 'chapter__content-img d-none d-lg-block',
+              imageClasses: '',
+            })
+          .chapter__part.chapter__part--mr
+            +title({
+              tag: 'h4',
+              type: '',
+              content: 'Об услуге',
+              classes: 'chapter__part-title',
+            })
+            p Таким образом рамки и место обучения кадров играет важную роль в формировании систем массового участия. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации новых предложений.
+            br
+            p Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании существенных финансовых и административных условий. Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+          .chapter__part
+            +title({
+              tag: 'h4',
+              type: '',
+              content: 'Цены',
+              classes: 'chapter__part-title',
+            })
+            .chapter__part-prices
+              .border-horizontal
+                span УЗИ геморроидальных узлов
+                span.text-500 650 ₽
+          .chapter__part
+            .chapter__slider
+              .specialists__content
+                .specialists__content-header
+                  +title({
+                    tag: 'h3',
+                    type: 'small',
+                    content: 'Cпециалисты',
+                    classes: 'mb-0',
+                  })
+                  .d-flex.slider__button-list
+                    button(type='button' class="button button-arrow slider__button-prev").js-chapter-button-prev
+                      +icon('arrow-left', 'icon')
+                    button(type='button' class="button button-arrow slider__button-next").js-chapter-button-next
+                      +icon('arrow-left', 'icon')
+                .swiper.specialists__slider.js-chapter-slider
+                  .swiper-wrapper
+                    each specialist in chapterSliderItems
+                      .swiper-slide.specialists__slider-slide
+                        +specItem({
+                          photoUrl: specialist.photoUrl,
+                          category: specialist.category,
+                          name: specialist.name,
+                          post: specialist.post,
+                          description: specialist.description,
+                        })
+                  .specialists__slider-pagination
+                    .d-flex.justify-content-center.js-chapter-pagination
+                      span(class="slider__pagination-bullet is-active")
+                      span(class="slider__pagination-bullet")
+                      span(class="slider__pagination-bullet")
+                      span(class="slider__pagination-bullet")
+                      span(class="slider__pagination-bullet")

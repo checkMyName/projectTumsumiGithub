@@ -1,0 +1,57 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Страница поиска';
+  - pageRootClass = 'search';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name:'Поиск',
+    },
+  ])
+  .search-page
+    .container
+      .row
+        .col-12.col-lg-8.mx-auto
+          +title({
+            tag: 'h3',
+            type: 'medium',
+            content: 'Поиск',
+            classes: 'mb-0 search-page__title',
+          })
+          form.d-flex.align-items-center.search.search-page__search.js-prices-search
+            button(type="button" class="d-flex me-1").js-prices-search-button
+              +icon('magnifier', 'icon', '16px', '16px')
+            input(id="pricesAutoComplete"  name='search' placeholder='Название услуги' value='' class="text-secondary").js-prices-search-input.js-search-input-highlight
+            button(type="button" class="d-flex me-1 search__close").js-prices-search-close
+              +icon('close', 'icon', '9px', '9px')
+          p.mt-2.text-small Найдено #[span.text-500 8 совпадений]
+          .search-page__content
+            .search-page__part
+              p.text-500.text-secondary.search-page__part-label Врачи
+              a(href="#").search-page__part-item
+                p.text-normal.text-500 #[span.text-darkred Гас]паева Валентина Ивановна
+                p.mb-0.text-small.text-dark Врач акушер-гениколог
+              a(href="#").search-page__part-item
+                p.text-normal.text-500 #[span.text-darkred Гас]паева Валентина Ивановна
+                p.mb-0.text-small.text-dark Врач акушер-гениколог
+              a(href="#").search-page__part-item
+                p.text-normal.text-500 #[span.text-darkred Гас]паева Валентина Ивановна
+                p.mb-0.text-small.text-dark Врач акушер-гениколог
+              a(href="#").search-page__part-item
+                p.text-normal.text-500 #[span.text-darkred Гас]паева Валентина Ивановна
+                p.mb-0.text-small.text-dark Врач акушер-гениколог
+            .search-page__part
+              p.text-500.text-secondary.search-page__part-label Услуги
+              a(href="#").search-page__part-item
+                p.text-normal.mb-0.text-500 #[span.text-darkred Гас]троэнтеролог
+              a(href="#").search-page__part-item
+                p.text-normal.mb-0.text-500 #[span.text-darkred Гас]троэнтеролог
+

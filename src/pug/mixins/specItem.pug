@@ -1,0 +1,28 @@
+mixin specItem(data)
+
+  .specitem.js-specitem
+    .specitem__wrapper
+      +lazyImage({
+        imageSrc: data.photoUrl,
+        type: 'background',
+        classes: 'w-100 h-100 specitem__photo',
+        imageClasses: 'w-100 h-100',
+      })
+      .specitem__content.text-white
+        p.text-500.text-ex-small.text-uppercase.specitem__content-category #{data.category}
+        h4.text-medium.specitem__content-name !{data.name}
+        span.text-small.specitem__content-post #{data.post}
+        p.mb-0.text-normal.specitem__content-description #{data.description}
+        .specitem__content-more
+          a(href="#" class="text-danger specitem__content-more-link") Подробнее
+          button(type="button" class="text-danger specitem__content-more-button").js-specitem-button-more
+            span.specitem__content-more-button-open Раскрыть описание
+            span.specitem__content-more-button-close Скрыть описание
+    .d-flex.justify-content-between.specitem__buttons
+      a(href="#" class="text-dark button button-white")
+        //- +icon('dot', 'icon icon-red', '18px', '18px')
+        span.button-dot
+        span Записаться
+      a(href="#" class="text-dark button button-white")
+        +icon('calendar', 'icon flex-shrink-0', '18px', '18px')
+        span.ms-2 Расписание

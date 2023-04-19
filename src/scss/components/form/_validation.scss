@@ -1,0 +1,45 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+
+.form__group {
+	position: relative;
+	margin-bottom: 0;
+
+	&.is-invalid {
+		.form__field {
+			&:not(.form__field-date) {
+				border: 1px solid get($colors, danger);
+			}
+
+			// &.form__datepicker {
+			// 	border: 1px solid get($colors, danger);
+			// }
+
+			@include placeholder {
+				color: get($colors, danger);
+			}
+		}
+	}
+
+	&.is-need-validate {
+		padding-bottom: $spacer * 1.5;
+		.form__group {
+			&-notify {
+				@include font-size($font-size-sm);
+				white-space: nowrap;
+				position: absolute;
+				color: get($colors, danger);
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+.form__datepicker {
+	&.is-invalid {
+		.form__datepicker-wrapper {
+			border: 1px solid get($colors, danger);
+		}
+	}
+}

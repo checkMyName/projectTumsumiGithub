@@ -1,0 +1,136 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.info {
+  $icon-size: rem(8px);
+
+  padding-top: rem(45px);
+  padding-bottom: rem(200px);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(22px);
+    padding-bottom: rem(68px);
+  }
+
+  &__title {
+    @include media-breakpoint-down(lg) {
+      font-size: rem(22px);
+    }
+  }
+
+  &__content {
+    padding: rem(40px) rem(48px);
+    background-color: get($colors, white);
+    border-radius: 8px;
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(16px);
+    }
+
+    &-divider {
+      margin: rem(32px) 0;
+      background-color: get($colors, gainsboro);
+
+      @include media-breakpoint-down(lg) {
+        margin: rem(16px) 0;
+      }
+    }
+
+    &-title {
+      margin-bottom: rem(24px);
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem(16px);
+
+        &--license {
+          font-size: rem(18px);
+        }
+      }
+    }
+
+    &-disclaimer {
+      padding: rem(8px);
+      background-color: get($colors, light);
+      border-radius: 8px;
+      margin-bottom: rem(16px);
+    }
+
+    &-part {
+      & + .info__content-part {
+        margin-top: rem(32px);
+      }
+    }
+
+    &-list {
+      list-style: disc;
+      padding-left: rem(20px);
+
+      li {
+        list-style: disc;
+      }
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      line-height: rem(22px);
+
+      & + .info__content-item {
+        margin-top: rem(24px);
+      }
+
+      p {
+        list-style-type: circle;
+      }
+
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(20px);
+        height: rem(20px);
+        flex-shrink: 0;
+        .svg-icon {
+          position: absolute;
+          top: $icon-size * 0.8;
+          left: 0;
+          fill: none;
+          width: $icon-size;
+          height: $icon-size;
+        }
+      }
+
+      span {
+        display: inline-block;
+        // padding-left: rem(22px);
+      }
+    }
+
+    &-license {
+      display: flex;
+      align-items: center;
+      padding: rem(4px) rem(8px);
+      background-color: get($colors, light);
+      border-radius: 8px;
+      width: 100%;
+
+      & + .info__content-license {
+        margin-top: rem(8px);
+      }
+
+      &-icon {
+        width: rem(12px);
+        height: rem(15px);
+      }
+
+      &-name {
+        margin-left: rem(8px);
+        max-width: 95%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: get($colors, primary);
+      }
+    }
+  }
+}

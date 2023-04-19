@@ -1,0 +1,172 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Контакты';
+  - pageRootClass = 'contacts';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Контакты',
+    },
+  ])
+  .position-relative
+    .contacts
+      .container
+        .contacts__content
+          +title({
+            tag: 'h3',
+            type: 'medium',
+            content: 'Контакты',
+            classes: 'mb-0',
+          })
+          div(class=["contacts__content-item", "contacts__content-item--big contacts__content-item--bt"])
+            .row.justify-content-between
+              .col-12.col-lg-7.order-2.order-lg-1
+                .d-flex
+                  .contacts__content-item-info
+                    p.text-big.text-500 С другой стороны дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Равным образом укрепление и развитие структуры влечет за собой процесс внедрения и модернизации систем массового участия. Товарищи!
+                    .mb-medium.mt-medium
+                      p.mb-3.text-medium.text-500 Верясов Дмитрий Александрович
+                      span.border-radius-8.text-danger.text-normal.text-500.contacts__content-post Главный врач Университетской многопрофильной клиники Тюменского ГМУ
+                    ul.mb-0.contacts__content-list
+                      li
+                        +icon('phone', 'icon')
+                        a(href='tel:+73452689201' class="contacts__content-list-link") +7 (3452) 68-92-01
+                      li
+                        +icon('at', 'icon')
+                        a(href='mailto:directorname@mail.ru' class="contacts__content-list-link") directorname@mail.ru
+                      li
+                        +icon('clock', 'icon')
+                        span(class="contacts__content-list-link") Вт, Чт 14:00-17:00
+                      li
+                        +icon('marker', 'icon')
+                        a(href='#' class="contacts__content-list-link") ул. Одесская, 54, каб. 618
+                  +icon('quotes', 'contacts__content-item-quotes')
+              .col-12.col-lg-5.col-xl-4.order-1.order-lg-2
+                .d-none.d-lg-block
+                  +lazyImage({
+                    imageSrc: 'img/specialists/specialist-photo-1',
+                    type: 'img',
+                    classes: 'contacts__content-img',
+                    imageClasses: 'border-radius-20',
+                  })
+                .d-block.d-lg-none
+                  +lazyImage({
+                    imageSrc: 'img/specialists/specialist-photo-1',
+                    type: 'background',
+                    classes: 'contacts__content-img',
+                    imageClasses: 'border-radius-20',
+                  })
+          .d-flex.flex-column.flex-lg-row
+            div(class=["contacts__content-item", "contacts__content-item--small contacts__content-item--pr"])
+              .row.justify-content-between
+                .col-12.col-lg-7.order-2.order-lg-1
+                  .d-flex
+                    .contacts__content-item-info
+                      .mb-medium
+                        p.mb-3.text-medium.text-500 Скоробогатова Ирина Анатольевна
+                        span.border-radius-8.text-danger.text-normal.text-500.contacts__content-post Заместитель главноного врача по медицинской части Университетсой многопрофильной клиники Тюменского ГМУ
+                      ul.mb-0.contacts__content-list
+                        li
+                          +icon('phone', 'icon')
+                          a(href='tel:+73452689201' class="contacts__content-list-link") +7 (3452) 68-92-01
+                        li
+                          +icon('at', 'icon')
+                          a(href='mailto:directorname@mail.ru' class="contacts__content-list-link") directorname@mail.ru
+                        li
+                          +icon('marker', 'icon')
+                          a(href='#' class="contacts__content-list-link") ул. Одесская, 54
+                .col-12.col-lg-5.order-1.order-lg-2
+                  .d-none.d-lg-block
+                    +lazyImage({
+                      imageSrc: 'img/specialists/specialist-photo-5',
+                      type: 'img',
+                      classes: 'contacts__content-img',
+                      imageClasses: 'border-radius-20',
+                    })
+                  .d-block.d-lg-none
+                    +lazyImage({
+                      imageSrc: 'img/specialists/specialist-photo-5',
+                      type: 'background',
+                      classes: 'contacts__content-img',
+                      imageClasses: 'border-radius-20',
+                    })
+            div(class=["contacts__content-item", "contacts__content-item--small contacts__content-item--pl contacts__content-item--bl"])
+              .row.justify-content-between
+                .col-12.col-lg-7.order-2.order-lg-1
+                  .d-flex
+                    .contacts__content-item-info
+                      .mb-medium
+                        p.mb-3.text-medium.text-500 Кобелева Елена Дмитриевна
+                        span.border-radius-8.text-danger.text-normal.text-500.contacts__content-post Заместитель главного врача по клинико-экспертной работе Университетской многопрофильной клиники Тюменского ГМУ
+                      ul.mb-0.contacts__content-list
+                        li
+                          +icon('phone', 'icon')
+                          a(href='tel:83452200538' class="contacts__content-list-link") 8 (3452) 20-05-38
+                        li
+                          +icon('at', 'icon')
+                          a(href='mailto:klinika@tyumsmu.ru' class="contacts__content-list-link") klinika@tyumsmu.ru
+                        li
+                          +icon('marker', 'icon')
+                          a(href='#' class="contacts__content-list-link") ул. Одесская, 54
+                .col-12.col-lg-5.order-1.order-lg-2
+                  .d-none.d-lg-block
+                    +lazyImage({
+                      imageSrc: 'img/specialists/specialist-photo-6',
+                      type: 'img',
+                      classes: 'contacts__content-img',
+                      imageClasses: 'border-radius-20',
+                    })
+                  .d-block.d-lg-none
+                    +lazyImage({
+                      imageSrc: 'img/specialists/specialist-photo-6',
+                      type: 'background',
+                      classes: 'contacts__content-img',
+                      imageClasses: 'border-radius-20',
+                    })
+          div(class=["contacts__content-item", "contacts__content-item--big"])
+            .row.justify-content-between
+              .col-12.col-lg-7.order-2.order-lg-1
+                .d-flex
+                  .contacts__content-item-info
+                    .mb-medium
+                      p.mb-3.text-medium.text-500 Верясов Дмитрий Александрович
+                      span.border-radius-8.text-danger.text-normal.text-500.contacts__content-post Главный врач Университетской многопрофильной клиники Тюменского ГМУ
+                    ul.mb-0.contacts__content-list
+                      li
+                        +icon('phone', 'icon')
+                        a(href='tel:+73452689201' class="contacts__content-list-link") +7 (3452) 68-92-01
+                      li
+                        +icon('at', 'icon')
+                        a(href='mailto:directorname@mail.ru' class="contacts__content-list-link") directorname@mail.ru
+                      li
+                        +icon('clock', 'icon')
+                        span(class="contacts__content-list-link") Вт, Чт 14:00-17:00
+                      li
+                        +icon('marker', 'icon')
+                        a(href='#' class="contacts__content-list-link") ул. Одесская, 54, каб. 618
+              .col-12.col-lg-4.order-1.order-lg-2
+                .d-none.d-lg-block
+                  +lazyImage({
+                    imageSrc: 'img/specialists/specialist-photo-1',
+                    type: 'img',
+                    classes: 'contacts__content-img',
+                    imageClasses: 'border-radius-20',
+                  })
+                .d-block.d-lg-none
+                  +lazyImage({
+                    imageSrc: 'img/specialists/specialist-photo-1',
+                    type: 'background',
+                    classes: 'contacts__content-img',
+                    imageClasses: 'border-radius-20',
+                  })
+    include ../components/addresses
+    button(type="button" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'})" class="scrollup")
+        +icon('download') 

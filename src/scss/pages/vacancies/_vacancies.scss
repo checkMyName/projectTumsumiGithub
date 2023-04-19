@@ -1,0 +1,64 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.vacancies {
+  padding-top: rem(56px);
+  padding-bottom: rem(110px);
+
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(24px);
+    padding-bottom: rem(30px);
+  }
+
+  &__content {
+    &-title {
+      margin-bottom: rem(40px);
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem(24px);
+      }
+    }
+
+    &-item {
+      padding: rem(40px);
+      background-color: get($colors, white);
+
+      @include media-breakpoint-down(lg) {
+        padding: rem(16px);
+
+        .button {
+          font-size: rem(14px);
+          width: 100%;
+        }
+      }
+
+      & + .vacancies__content-item {
+        margin-top: rem(16px);
+      }
+
+      &-text,
+      .button {
+        margin-top: rem(32px);
+
+        @include media-breakpoint-down(lg) {
+          margin-top: rem(16px);
+        }
+      }
+
+      &-text {
+        @include media-breakpoint-up(lg) {
+          width: 80%;
+        }
+      }
+
+      ul {
+        padding-left: rem(24px);
+
+        li {
+          list-style: disc;
+        }
+      }
+    }
+  }
+}

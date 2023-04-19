@@ -1,0 +1,98 @@
+@import "../utilities/variables";
+@import "node_modules/bootstrap/scss/mixins/breakpoints";
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	// flex-wrap: wrap;
+	// overflow: hidden;
+	white-space: nowrap;
+
+	@include media-breakpoint-up(sm) {
+		// display: flex;
+		// align-items: center;
+		// flex-wrap: wrap;
+		// padding-top: $spacer * 2;
+		// padding-bottom: $spacer  * 2;
+
+		@include media-breakpoint-up(lg) {
+			padding-top: $spacer * 2;
+			padding-bottom: $spacer * 2;
+		}
+
+		@include media-breakpoint-between(md, lg) {
+			padding-top: $spacer * 1.5;
+			padding-bottom: $spacer * 1.5;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding-top: $spacer * 0.65;
+			padding-bottom: $spacer * 0.65;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include media-breakpoint-down(md) {
+			padding-top: $spacer * 0.65;
+			padding-bottom: $spacer * 0.65;
+		}
+	}
+
+	&__wrapper {
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-color: get($colors, light);
+	}
+
+	&__icon {
+		width: rem(10px);
+		height: rem(10px);
+		flex-shrink: 0;
+
+		margin-left: $spacer;
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		// text-overflow: ellipsis;
+		// white-space: nowrap;
+		// overflow: hidden;
+		// width: rem();
+		color: get($colors, gray-third);
+
+		&:last-child {
+			.breadcrumbs__current {
+				text-overflow: ellipsis;
+				// white-space: nowrap;
+				overflow: hidden;
+			}
+
+			// @media screen and (max-width: 400px) {
+			// 	max-width: rem(80px);
+			// }
+
+			@include media-breakpoint-down(sm) {
+				max-width: rem(80px);
+			}
+		}
+
+		& + .breadcrumbs__item {
+			margin-left: $spacer;
+
+			// &:before {
+			// 	content: '/';
+			// 	display: inline;
+			// 	margin-right: $spacer;
+			// }
+		}
+	}
+	&__current {
+		cursor: default;
+
+		color: get($colors, secondary);
+	}
+}

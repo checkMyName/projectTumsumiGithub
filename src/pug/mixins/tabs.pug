@@ -1,0 +1,13 @@
+mixin tabs(items)
+
+  .tabs
+    .row.gx-1.align-items-center
+      each item in items
+        .col.col-md-auto.tabs__slide(class=item.classes || null data-value=item.value ? item.value : null)
+          input(type="radio" name="slide" + item.place checked=item.checked ? true : false)
+          span.text-dark #{item.name}
+    //- .d-flex.align-items-center
+    //-   each item in items
+    //-     .tabs__slide(class=item.classes || null data-value=item.value ? item.value : null)
+    //-       input(type="radio" name="slide" + item.place checked=item.checked ? true : false)
+    //-       span.text-dark #{item.name}

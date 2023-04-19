@@ -1,0 +1,16 @@
+nav.d-flex.nav.js-nav
+  .nav__content.js-nav-content
+    .nav__dropdown.js-dropdown-popup
+      .nav__dropdown-button.d-flex.align-items-center.js-dropdown-popup-button
+        span.me-2 Услуги
+        +icon('arrow-down', 'icon', '10px', '10px')
+      .nav__dropdown-block.js-dropdown-popup-content
+        each item in labelItems
+          a(href=item.link class="d-block link nav__dropdown-wrapper-link") #{item.name}
+    each item in menuItems
+      a(href=item.link class=["link nav__link js-nav-link", item.classes]) #{item.name}
+  //- .d-none.d-lg-block
+  .nav__tripledot.js-nav-tripledot.js-dropdown-popup
+    button(type="button" class="d-flex nav__tripledot-button").js-dropdown-popup-button
+      +icon('tripledot', '', '20px', '20px')
+    .nav__tripledot-content.js-nav-tripledot-content.js-dropdown-popup-content

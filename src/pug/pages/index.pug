@@ -1,0 +1,127 @@
+extends ../layout/main
+
+block mainVariables
+	- pageTitle = 'Навигатор по страницам'
+	- pageRootClass = null
+	- activeNavIndex = 2
+
+
+block mainContent
+	.container-fluid.py-5
+		.row
+			.col-md-6.mx-auto
+				h1.title.title--normal.pb-4 Навигатор по станицам
+				ul.d-flex.flex-column
+					-
+						pages = [
+							{
+								href: 'ui.html',
+								name: 'Ui kit',
+								done: false,
+								adaptive: false
+							},
+							{
+								href: 'home.html',
+								name: 'Главная',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'search.html',
+								name: 'Страница поиска',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'chapter.html',
+								name: 'Страница раздела',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'service.html',
+								name: 'Страница услуги',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'services.html',
+								name: 'Все услуги',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'doctors.html',
+								name: 'Врачи',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'doctor.html',
+								name: 'Страница врача',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'prices.html',
+								name: 'Цены',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'information.html',
+								name: 'Информация',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'info.html',
+								name: 'Страница информации',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'Q&A.html',
+								name: 'Вопросы и ответы',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'reviews.html',
+								name: 'Отзывы',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'vacancies.html',
+								name: 'Вакансии',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'contacts.html',
+								name: 'Контакты',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'articles.html',
+								name: 'Полезные статьи',
+								done: true,
+								adaptive: true
+							},
+							{
+								href: 'article.html',
+								name: 'Страница статьи',
+								done: true,
+								adaptive: true
+							},
+						]
+					each page in pages
+						- color = (page.done && page.adaptive) ? '#81c784' : '#EE8732'
+
+						li(style=`background-color: ${page.done ? color : '#e57373'};`).mb-3
+							a(
+								href=page.href
+								style='padding: 10px 15px; color: white;'
+							).py-2.d-inline-block.page__text--large.d-block #{page.name}#{!page.adaptive && ' - без адаптивности' || null}

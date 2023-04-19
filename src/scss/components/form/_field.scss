@@ -1,0 +1,257 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+$field-dropdown-icon-size: rem(14px);
+
+.form {
+	&__wrapper {
+		padding: rem(48px) 0;
+		margin-top: rem(64px);
+		background-color: get($colors, white);
+
+		@include media-breakpoint-down(lg) {
+			margin-top: rem(52px);
+			padding: rem(24px) 0;
+		}
+
+		.tabs {
+			margin: rem(32px) 0;
+
+			@include media-breakpoint-down(lg) {
+				margin: rem(26px) 0;
+			}
+		}
+	}
+
+	&__label {
+		display: block;
+		// padding-bottom: $spacer * 0.5;
+		padding-bottom: rem(8px);
+	}
+	&__field {
+		@include transition;
+
+		padding: rem(12px) rem(16px);
+		width: 100%;
+		background-color: get($colors, light);
+		border: 1px solid get($colors, gainsboro);
+		border-radius: 8px;
+		outline: none;
+
+		&:not(.form__field-date):hover {
+			border: 1px solid get($colors, secondary);
+		}
+
+		@include media-breakpoint-down(lg) {
+			font-size: rem(14px);
+		}
+
+		@include placeholder {
+			@include transition;
+			@include font-size($font-size-sm);
+
+			color: get($colors, secondary);
+
+			@include media-breakpoint-down(lg) {
+				font-size: rem(14px);
+			}
+		}
+		&:not(.form__field-date):focus {
+			border: 1px solid get($colors, black);
+			@include placeholder {
+				opacity: 0;
+				transform: translateX($spacer * 0.5);
+			}
+		}
+	}
+	&__select {
+		width: 100%;
+	}
+	&__dropdown {
+		background-color: get($colors, light);
+		border-radius: 8px;
+
+		&-dropdown {
+			// height: 300px;
+			margin-top: rem(8px);
+			max-height: rem(300px);
+			overflow: auto;
+			box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+		}
+
+		&-button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			text-align: left;
+			justify-content: space-between;
+			width: 100%;
+			padding: rem(12px) rem(15px);
+			z-index: get($index, default);
+
+			// padding-right: $field-dropdown-icon-size * 2;
+			.svg-icon {
+				@include transition(transform);
+				// position: absolute;
+				// right: $field-dropdown-icon-size / 2;
+				top: 50%;
+				width: $field-dropdown-icon-size;
+				height: $field-dropdown-icon-size;
+				transform-origin: center center;
+				// transform: translateY(-50%) rotateX(0);
+				will-change: transform;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			&.show {
+				.svg-icon {
+					transform: rotateX(180deg);
+				}
+			}
+			.spinner-border {
+				color: get($colors, dark);
+			}
+		}
+		&-list {
+			background-color: $body-bg;
+			box-shadow: 0 $spacer * 0.6 $spacer * 2 0 rgba(get($colors, dark), 0.1);
+			border-radius: $border-radius-sm;
+			// padding: rem(10px);
+			margin-bottom: 0;
+
+			&-item {
+				@include transition(background-color);
+
+				position: relative;
+				cursor: pointer;
+				background-color: $body-bg;
+
+				&.is-selected {
+					color: get($colors, pink);
+
+					&::after {
+						content: "✓";
+						// position: absolute;
+						margin-left: rem(8px);
+						color: get($colors, danger);
+					}
+				}
+
+				&.is-missing {
+					opacity: .2;
+				}
+
+				&:hover,
+				&.is-selected {
+					// background-color: rgba(get($colors, dark), .05);
+				}
+			}
+		}
+	}
+
+	&__datepicker {
+		position: relative;
+
+		.form__field-date {
+			padding: 0;
+		}
+
+		&-wrapper {
+			display: flex;
+			justify-content: space-between;
+			padding: rem(12px) rem(16px);
+			background-color: get($colors, light);
+			border-radius: 8px;
+			width: 100%;
+		}
+
+		input {
+			margin-right: rem(8px);
+			border: none;
+		}
+	}
+
+	&__title {
+		@include media-breakpoint-down(lg) {
+			margin-bottom: rem(16px);
+		}
+	}
+
+	&__subtitle {
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+		}
+	}
+
+	&__button {
+		padding: rem(12px) rem(18px);
+
+		@include media-breakpoint-down(lg) {
+			margin-top: rem(24px);
+		}
+	}
+
+	&__agreement {
+		display: flex;
+
+		&-checkbox {
+			position: relative;
+
+			&:hover {
+				span {
+					border: 1px solid get($colors, danger);
+				}
+			}
+
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+
+				&:checked + span {
+					background-color: get($colors, danger);
+
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+
+			span {
+				@include transition;
+
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: rem(22px);
+				height: rem(22px);
+				background-color: get($colors, light);
+				border: 1px solid get($colors, gainsboro);
+				border-radius: 6px;
+				margin-right: rem(8px);
+				z-index: 1;
+
+				&::after {
+					content: "";
+					display: block;
+					width: rem(15px);
+					height: rem(12px);
+					background: url("../img/checkmark.svg");
+					background-repeat: no-repeat;
+					background-size: contain;
+					user-select: none;
+					pointer-events: none;
+					opacity: 0;
+					// z-index: -1;
+				}
+			}
+		}
+	}
+}

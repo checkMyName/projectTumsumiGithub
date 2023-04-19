@@ -1,0 +1,111 @@
+extends ../layout/main
+
+block mainVariables
+  - pageTitle = 'Полезные статьи';
+  - pageRootClass = 'articles';
+  - pageId = 'js-page-regular'
+  - activeNavIndex = 0
+
+block mainContent
+
+  -
+    articlesItem = [
+      {
+        imageUrl: 'img/articles/article-img-1',
+        isVideo: true,
+        title: 'Спинальная мышечная атрофия',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+      {
+        imageUrl: 'img/articles/article-img-2',
+        title: 'Особенности психических нарушений при неврологических заболеваниях',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+      {
+        imageUrl: 'img/articles/article-img-3',
+        title: 'Особенности психических нарушений',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+      {
+        imageUrl: 'img/articles/article-img-4',
+        title: 'Спинальная мышечная атрофия',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+      {
+        imageUrl: 'img/articles/article-img-5',
+        title: 'Спинальная мышечная атрофия',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+      {
+        imageUrl: 'img/articles/article-img-6',
+        isVideo: true,
+        title: 'Спинальная мышечная атрофия',
+        name: 'Спинальная мышечная атрофия относится к числу самых частых причин младенческих заболеваний. В данной статье представлены механизмы развит...',
+        date: '16.08.2022',
+      },
+    ]
+
+  +breadcrumbs([
+    {
+      name: 'Главная',
+      href: 'home.html',
+    },
+    {
+      name: 'Полезные статьи',
+    },
+  ])
+  .articles.bg-light
+    .container
+      .articles__content
+        +title({
+          tag: 'h3',
+          type: 'medium',
+          content: 'Полезные статьи',
+          classes: 'mb-0 articles__title',
+        })
+        .row.gy-5.g-lg-4
+          each item in articlesItem
+            .col-12.col-md-6.col-lg-4
+              a(href="#" class="articles__item")
+                .articles__item-img
+                  +lazyImage({
+                    imageSrc: item.imageUrl,
+                    type: 'img',
+                    classes: '',
+                    imageClasses: '',
+                  })
+                  if item.isVideo
+                    .text-white.articles__item-img-label
+                      +icon('video')
+                      span.ms-1.text-small Видео
+                .articles__item-block
+                  p.mb-0.text-big.text-500.articles__item-title #{item.title}
+                  p.text-dark.text-normal.articles__item-text #{item.name}
+                p.text-small.text-uppercase.text-secondary #{item.date}
+        .d-flex.justify-content-center.mt-5.pagination
+          button(type='button' class="button button-arrow mr-middle")
+            +icon('arrow-left', 'icon')
+          .row.gx-1
+            .col-auto
+              button(type='button' class="button button-pagination current")
+                span 1
+            .col-auto
+              button(type='button' class="button button-pagination")
+                span 2
+            .col-auto
+              button(type='button' class="button button-pagination")
+                span 3
+            .col-auto
+              button(type='button' class="button button-pagination")
+                span 4
+            .col-auto
+              button(type='button' class="button button-pagination")
+                span 5
+          button(type='button' class="button button-arrow button-arrow--reverse ml-middle")
+            +icon('arrow-left', 'icon')
+    include ../components/scrollup

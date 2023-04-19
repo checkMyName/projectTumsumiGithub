@@ -1,0 +1,70 @@
+extends ../../layout/modal
+
+block modalVariables
+  - modalId = 'js-tax-modal'
+  - modalClasses = 'modal--tax'
+
+block modalContent
+  .modal__content
+    h4.text-big.modal__content-title Налоговый вычет
+    form(class=['modal__content-form js-form-validate'])
+      .row.justify-content-center.gx-3
+        .col-12
+          +field({
+            type: 'text',
+            label: 'ФИО налогоплательщика',
+            placeholder: 'ФИО налогоплательщика',
+            classes: '',
+            validate: true,
+          })
+        .col-12
+          +field({
+            type: 'text',
+            label: 'ФИО клиента',
+            placeholder: 'ФИО клиента',
+            classes: '',
+            validate: true,
+          })
+        .col-12
+          +field({
+            type: 'phone',
+            label: 'Телефон',
+            placeholder: 'Телефон',
+            classes: 'js-phone-mask',
+            validate: true,
+            validateLength: 18,
+            value: "+7"
+          })
+        .col-12
+          label.form__label День рождения
+          +field({
+            type: 'datepicker',
+            placeholder: '01.01.2023',
+            validate: true,
+            classes: '',
+          })
+        .col-12
+          label.form__label Период оказания услуг
+          .row.gx-3
+            .col-6
+              +field({
+                type: 'datepicker', 
+                placeholder: 'от',
+                validate: true,
+                classes: '',
+              })
+            .col-6
+              +field({
+                type: 'datepicker',
+                placeholder: 'до',
+                validate: true,
+                classes: '',
+              })
+      span.text-normal.text-dark.mb-0 Нажимая на кнопку, вы даете согласие 
+      a(href="#" class="text-danger text-normal text-decoration-underline") на обработку персональных данных.
+      +button({
+        buttonType: 'submit',
+        type: 'red',
+        content: 'Заказать справку',
+        classes: 'w-100 text-500 button-size-normal modal__content-form-button'
+      })

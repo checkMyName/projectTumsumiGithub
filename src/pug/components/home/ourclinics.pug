@@ -1,0 +1,106 @@
+section.ourclinics
+  
+  -
+    ourclinicsItems = [
+      {
+        bgUrl: 'img/home/our-clinics-img-1',
+        title: 'Клиника',
+        classes: 'left text-white',
+        icon: 'medkit',
+        description: 'В Университетской многопрофильной клинике Тюменского ГМУ имеется мощный кадровый потенциал: по 40 специальностям работает 102 врача. Из них 33 являются сотрудниками клинических кафедр университета, 13 - докторами медицинских наук, профессорами, 28 – кандидатами медицинских наук.',
+        infoLink: '#',
+      },
+      {
+        bgUrl: 'img/home/our-clinics-img-2',
+        title: 'Стоматология',
+        classes: 'right',
+        icon: 'tooth',
+        description: 'Сегодня отделение имеет в штате специалистов высокого уровня, оказывающие медицинскую помощь на современном и профессиональном уровне.',
+        infoLink: '#',
+      },
+    ]
+  
+  .container
+    +title({
+      tag: 'h3',
+      type: 'medium',
+      content: 'Наши клиники',
+      classes: 'label ourclinics__title',
+    })
+    .ourclinics__content
+      .d-none.d-lg-flex.justify-content-between
+        each item in ourclinicsItems
+          .ourclinics__item
+            +lazyImage({
+              imageSrc: item.bgUrl,
+              type: 'background',
+              classes: 'w-100 h-100 ourclinics__item-bg',
+              imageClasses: 'w-100 h-100',
+            })
+            div(class=["ourclinics__item-content", item.classes])
+              .d-flex.justify-content-between.align-items-lg-start
+                +title({
+                  tag: 'h4',
+                  type: 'small',
+                  content: item.title,
+                  classes: ["ourclinics__item-content-title", item.titleClasses],
+                })
+                +icon(item.icon, 'ourclinics__item-content-icon')
+              .ourclinics__item-content-text
+                p #{item.description}
+                a(href=item.infoLink class="ourclinics__item-content-link")
+                  span.text-500 Информация для пациентов
+                  +icon('arrow-down', 'icon', '7px', '7px')
+
+
+      .swiper.ourclinics__slider.js-ourclinics-intro-slider.d-block.d-lg-none
+        .swiper-wrapper
+          each item in ourclinicsItems
+            .swiper-slide
+              .ourclinics__item
+                +lazyImage({
+                  imageSrc: item.bgUrl,
+                  type: 'background',
+                  classes: 'w-100 h-100 ourclinics__item-bg',
+                  imageClasses: 'w-100 h-100',
+                })
+                div(class=["ourclinics__item-content", item.classes])
+                  .d-flex.justify-content-between.align-items-lg-start
+                    +title({
+                      tag: 'h4',
+                      type: 'small',
+                      content: item.title,
+                      classes: ["ourclinics__item-content-title", item.titleClasses],
+                    })
+                    +icon(item.icon, 'ourclinics__item-content-icon')
+                  .ourclinics__item-content-text
+                    p #{item.description}
+                    a(href=item.infoLink class="ourclinics__item-content-link")
+                      span.text-500 Информация для пациентов
+                      +icon('arrow-down', 'icon', '7px', '7px')
+
+
+      //- .row.gx-4
+      //-   each item in ourclinicsItems
+      //-     .col-6
+      //-       .ourclinics__item
+      //-         +lazyImage({
+      //-           imageSrc: item.bgUrl,
+      //-           type: 'background',
+      //-           classes: 'w-100 h-100 ourclinics__item-bg',
+      //-           imageClasses: 'w-100 h-100',
+      //-         })
+      //-         div(class=["ourclinics__item-content", item.classes])
+      //-           .d-flex.justify-content-between
+      //-             +title({
+      //-               tag: 'h4',
+      //-               type: 'small',
+      //-               content: item.title,
+      //-               classes: ["ourclinics__item-content-title", item.titleClasses],
+      //-             })
+      //-             +icon(item.icon, 'ourclinics__item-content-icon')
+      //-           .ourclinics__item-content-text
+      //-             p #{item.description}
+      //-             a(href=item.infoLink class="ourclinics__item-content-link")
+      //-               span Информация для пациентов
+      //-               +icon('arrow-down', 'icon', '7px', '7px')

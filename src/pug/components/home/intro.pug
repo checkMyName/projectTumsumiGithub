@@ -1,0 +1,58 @@
+section.intro.js-home-intro
+
+  .container
+    .swiper.intro__slider.js-home-intro-slider
+      .swiper-wrapper
+        each val in [1, 2, 3, 4, 5]
+          .swiper-slide.intro__slider-slide
+            .h-100.intro__slider-content
+              +lazyImage({
+                imageSrc: 'img/home/home-slider-image',
+                type: 'background',
+                classes: 'w-100 h-100 intro__slider-content-bg',
+                imageClasses: 'w-100 h-100',
+              })
+              .row
+                .col-12.col-md-8.col-xl-4.text-white
+                  +title({
+                    tag: 'h1',
+                    type: 'big',
+                    content: 'Лабораторные исследования',
+                    classes: '',
+                  })
+                  p.intro__slider-content-text Лабораторная диагностика в университетской многопрофильной клинике это быстро, удобно и не дорого!
+                  +button({
+                    tag: 'a',
+                    link: {href: '#'},
+                    type: 'red',
+                    content: 'Подробнее',
+                    classes: 'text-500 button-red--big d-inline-block',
+                  })
+      .d-flex.intro__slider-controlls
+        .d-flex.slider__button-list.intro__slider-button-list.js-slider-buttons-list
+          button(type='button' class="button button-arrow slider__button-prev").js-intro-slider-button-prev
+            +icon('arrow-left', 'icon')
+          button(type='button' class="button button-arrow slider__button-next").js-intro-slider-button-next
+            +icon('arrow-left', 'icon')
+        .slider__pagination.intro__slider-pagination
+          .d-flex.js-slider-pagination
+    .intro__statistic
+      .row.gx-1.gx-md-5.gy-4.justify-content-between.align-items-lg-center
+        .col-6.col-lg-4.col-xxl-auto
+          .intro__statistic-item
+            .d-flex.align-items-center
+              +icon('big-arrow', 'intro__statistic-icon')
+              span.intro__statistic-numbers 100 +
+            p.text-dark.intro__statistic-name Специалистов разных направлений работает у нас в штате
+        .col-6.col-lg-4.col-xxl-auto
+          .intro__statistic-item
+            .d-flex.align-items-center
+              +icon('big-arrow', 'intro__statistic-icon')
+              span.intro__statistic-numbers 27 лет
+            p.text-dark.intro__statistic-name Успешно оказываем медицинские услуги
+        .col-6.col-lg-4.col-xxl-auto
+          .intro__statistic-item
+            .d-flex.align-items-center
+              +icon('big-arrow', 'intro__statistic-icon')
+              span.intro__statistic-numbers 71
+            p.text-dark.intro__statistic-name Профиль оказываемой медицинской помощи

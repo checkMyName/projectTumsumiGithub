@@ -1,0 +1,67 @@
+extends ../../layout/modal
+
+block modalVariables
+  - modalId = 'js-worksheet-modal'
+  - modalClasses = 'modal--worksheet'
+
+block modalContent
+  .modal__content
+    h4.text-big.modal__content-title Заполнить анкету
+    .d-flex.text-small.modal__content-vacancy-text
+      p.mb-0.text-500 Вакансия: 
+      span.ms-2.text-primary.text-decoration-underline.modal__content-vacancy Регистратор в сеть медицинских центров
+    form(class=['modal__content-form js-form-validate js-code-validate'])
+      .row.justify-content-center.gx-3
+        .col-12.col-md-6
+          +field({
+            type: 'text',
+            placeholder: 'ФИО',
+            classes: 'p-3',
+            validate: true,
+            validateLength: 18
+          })
+        .col-12.col-md-6
+          +field({
+            type: 'phone',
+            placeholder: 'Телефон',
+            classes: 'p-3 js-phone-mask',
+            validate: true,
+            value: "+7"
+          })
+        .col-12
+          +field({
+            type: 'textarea',
+            placeholder: 'Расскажите о себе и своём опыте',
+            classes: 'p-3',
+            validate: true,
+          })
+      .modal__content-file
+        .file.js-group-preview
+          .d-flex.file__empty.js-file-empty
+            label(for='file').file__loader.d-flex.justify-content-center
+              input(type='file' id='file' accept='.pdf,.docx,.txt,.doc').visually-hidden.js-file-input
+              +icon('download-file', '', '14px', '14px')
+            .text-primary
+              p.text-500 Загрузить анкету
+              p.mb-0.text-small .pdf  .docx  .txt  .doc
+          .d-flex.file__error.js-file-error.is-hidden
+            +icon('explanation-mark')
+            p.mb-0.ms-2 Размер загруженного файла превышает 10 Мб!
+          .file__loaded.js-file-loaded.is-hidden
+            //- .d-flex.align-items-center
+            +icon('file')
+            p.mb-0.ms-2.file__loaded-name.js-file-name.text-small.text-primary File name
+            button(type="button" class="file__loaded-button").js-file-delete
+              +icon('close', 'icon')
+      .modal__content-form-button
+        .row.gy-2.gy-lg-0.justify-content-between.align-items-center
+          .col-12.col-lg-6.text-center.text-lg-start.text-small.modal__content-form-button-text.order-2.order-lg-1
+            span.mb-0.text-dark Нажимая на кнопку, вы даете согласие #[br.d-none.d-lg-block]
+            a(href="#" class="text-danger text-decoration-underline") на обработку персональных данных.
+          .col-12.col-lg-auto.order-1
+            +button({
+              buttonType: 'submit',
+              type: 'red',
+              content: 'Отправить',
+              classes: 'w-100 text-500 button-size-normal'
+            })

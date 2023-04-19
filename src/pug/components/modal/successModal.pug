@@ -1,0 +1,24 @@
+extends ../../layout/modal
+
+block modalVariables
+  - modalId = 'js-success-modal'
+  - modalClasses = 'modal--success'
+
+block modalContent
+  .modal__content
+    +lazyImage({
+      imageSrc: 'img/success',
+      type: 'img',
+      classes: 'mx-auto modal__content-img',
+      imageClasses: '',
+    })
+    .text-center.modal-text
+      h4.text-big.modal__content-title Ваш вопрос отправлен!
+      p.text-normal.text-dark Наш менеджер ответит на ваш вопрос в течении 48 часов!
+    +button({
+      buttonType: 'button',
+      type: 'red',
+      content: 'Вернуться в раздел <span class="d-none d-lg-inline">Вопросы/Ответы</span>',
+      classes: 'w-100 button-size-normal modal__content-form-button'
+    })
+    a(href="home.html" class="text-center text-normal text-decoration-underline text-dark modal__content-form-link") На главную

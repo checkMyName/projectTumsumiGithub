@@ -1,0 +1,52 @@
+@import "../utilities/variables";
+
+.item {
+  display: block;
+  background-color: get($colors, white);
+  border-radius: 8px;
+  // width: rem(380px);
+  margin-top: rem(8px);
+
+  cursor: pointer;
+
+  &:hover {
+    .item__text-title {
+      color: get($colors, danger);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: rem(24px);
+    min-height: rem(160px);
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    padding: rem(20px);
+    min-height: rem(120px);
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: rem(16px);
+    min-height: rem(97px);
+  }
+
+  &__image {
+    @include media-breakpoint-down(md) {
+      width: rem(50px);
+      height: rem(50px);
+    }
+  }
+
+  &__text {
+    width: 65%;
+    @include media-breakpoint-down(md) {
+      @include font-size(14px);
+
+      width: 75%;
+    }
+
+    &-title {
+      @include transition;
+    }
+  }
+}

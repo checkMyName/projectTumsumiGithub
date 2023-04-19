@@ -1,0 +1,21 @@
+@import "../utilities/variables";
+@import "node_modules/bootstrap/scss/mixins/breakpoints";
+
+.air-datepicker {
+  &-global-container {
+    z-index: 9999 !important;
+  }
+
+  &-body {
+    &--day-name {
+      color: get($colors, primary);
+    }
+  }
+
+  &-cell {
+
+    &.-selected- {
+      background-color: get($colors, info);
+    }
+  }
+}

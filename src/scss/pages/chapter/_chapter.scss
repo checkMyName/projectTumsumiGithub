@@ -1,0 +1,249 @@
+@import "../../utilities/variables";
+@import "../../utilities/mixins";
+@import "node_modules/bootstrap/scss/vendor/rfs";
+
+.page--chapter {
+
+  .chapter__content {
+    display: none;
+  }
+}
+
+.chapter {
+  $chapter-padding: rem(40px);
+  $img-size: rem(80px);
+
+  overflow: hidden;
+
+  &__part {
+    margin-bottom: rem(64px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(32px);
+    }
+
+    @include media-breakpoint-down(sm) {
+
+      .specialists__content-header {
+        .title {
+          font-size: rem(22px);
+        }
+      }
+    }
+
+    &-prices {
+      &.hidden {
+        .border-horizontal {
+          display: none;
+
+          &:nth-child(-n + 4) {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    &-button {
+      @include font-size(16px);
+
+      padding: rem(16px) rem(24px);
+      margin-top: rem(24px);
+
+      &-open {
+        display: inline-block;
+      }
+
+      &-close {
+        display: none;
+      }
+
+      &.is-active {
+        .chapter__part-button-open {
+          display: none;
+        }
+        .chapter__part-button-close {
+          display: inline-block;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        @include font-size(14px);
+
+        font-weight: 500;
+        margin-top: rem(16px);
+        padding: rem(12px);
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .title {
+      // @include media-breakpoint-down(lg) {
+      //   @include font-size(22px);
+      // }
+    }
+
+    &-title {
+      @include font-size(32px);
+
+      font-weight: 700;
+      margin-bottom: rem(24px);
+
+      @include media-breakpoint-down(lg) {
+        // @include font-size(22px);
+        font-size: rem(22px);
+
+        margin-bottom: rem(16px);
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      height: rem(76px);
+      padding: 0 rem(20px);
+      background-color: get($colors, white);
+      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        .chapter__part-item-icon {
+          stroke: get($colors, danger);
+        }
+      }
+
+      @include media-breakpoint-between(md, lg) {
+        height: rem(62px);
+      }
+
+      @include media-breakpoint-down(md) {
+        height: rem(48px);
+        padding: 0 rem(16px);
+      }
+
+      &-link {
+        // @include font-size(18px);
+        // font-weight: 500;
+
+        @include media-breakpoint-down(lg) {
+          width: 80%;
+        }
+      }
+
+      &-icon {
+        width: rem(12px);
+        height: rem(12px);
+        transform: rotate(-90deg);
+      }
+    }
+
+    &--mr {
+      @include media-breakpoint-up(lg) {
+        margin-right: $img-size;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__list,
+  &__content {
+    padding-top: $chapter-padding;
+
+    @include media-breakpoint-down(lg) {
+      padding-top: rem(24px);
+    }
+  }
+
+  &__content {
+    width: 80%;
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      border-right: 1px solid get($colors, gainsboro);
+      width: 20%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
+
+    &-dropdown {
+      .form__dropdown {
+        padding: 0;
+      }
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+
+      &:not(.is-active) {
+        color: get($colors, dark);
+      }
+
+      &.is-active {
+        border-right: 2px solid get($colors, danger);
+      }
+
+      & + .chapter__list-item {
+        margin-top: rem(13px);
+      }
+    }
+  }
+
+  &__content {
+    // display: none;
+
+    @include media-breakpoint-up(lg) {
+      padding-left: $chapter-padding;
+    }
+
+    &.is-active {
+      display: block;
+    }
+
+    &-header {
+      .title {
+        margin-bottom: rem(24px);
+
+        @include media-breakpoint-down(lg) {
+          margin-bottom: rem(16px);
+        }
+      }
+    }
+
+    &-img {
+      width: $img-size;
+      height: $img-size;
+    }
+
+    &-list {
+      &-link {
+        @include media-breakpoint-down(md) {
+          @include font-size(12px);
+        }
+
+        & + .chapter__content-list-link {
+          margin-left: rem(24px);
+        }
+      }
+    }
+  }
+}

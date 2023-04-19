@@ -1,0 +1,50 @@
+@import "../utilities/variables";
+
+.menu {
+  &__logo {
+    @include media-breakpoint-up(lg) {
+      width: rem(140px);
+      height: rem(40px);
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      width: rem(120px);
+      height: rem(30px);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(86px);
+      height: rem(20px);
+    }
+    // width: rem(86px);
+    // height: rem(20px);
+  }
+
+  &__label {
+    @include font-size(14px);
+
+    margin-bottom: rem(16px);
+  }
+
+  &__link {
+    @include font-size(20px);
+
+    font-weight: 500;
+    padding: rem(2px) 0;
+  }
+
+  .menu__link + .menu__link {
+    margin-top: rem(14px);
+  }
+
+  &__divider {
+    margin: rem(16px) 0;
+    color: get($colors, gainsboro);
+  }
+
+  .offcanvas-header {
+    padding-top: rem(8px);
+    padding-bottom: rem(8px);
+    background-color: get($colors, light);
+  }
+}
